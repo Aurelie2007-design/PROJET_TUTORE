@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar{
+    width: 100vw;
+    height: 40px;
+    background: rgb(6, 184, 6);
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+}
+.container{
+    display: flex;
+    /* align-items: center; */
+    justify-content: left;
+}
+.container .sidebar{
+    padding: 20px;
+    background: rgb(1, 77, 1);
+    height: 593px;
+    width: 20%;
+}
+.container .sidebar .titre{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+}
+.container .sidebar .titre .logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+.container .sidebar .titre .titre{
+    color: white;
+    display: block;
+}
+.container .sidebar .titre .titre h1{
+    font-size: 25px;
+    font-weight: 200;
+}
+.container .sidebar .titre .titre p{
+    color: rgba(228, 225, 225, 0.7);
+}
+.container .sidebar .boite{
+    display: block;
+    gap: 20px;
+}
+.container .sidebar .boite div.link{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 40px;
+    /* border: 1px solid green; */
+    border-radius: 6px;
+    background: rgb(6, 184, 6);
+    padding: 5px;
+}
+.container .sidebar .boite div.link .btn{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    text-decoration: none;
+    color: white;
+}
+.container .sidebar .boite div.link .btn .logo{
+    background: white;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.container .page{
+    display: block;
+    background: rgb(245, 242, 242);
+    width: 80%;
+    height: auto;
+}
+.container .page .head{
+    background: white;
+    border-bottom: 1px solid rgba(12, 11, 11, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
