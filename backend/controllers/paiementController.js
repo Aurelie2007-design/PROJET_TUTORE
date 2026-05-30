@@ -1,20 +1,21 @@
 const db = require("../db/db");
 const paiementModel = require("../models/paiementModel");
-
+console.log("ROUTE ajouterPaiement appelée");
 exports.ajouterPaiement = (req, res)=>{
-//     const {user_id, montant, motif} = req.body;
-//     paiementModel.nouvelPaiement(user_id, montant, motif, (err, result) => {
-//     if (err) return res.status(500).json(err);
+    const {user_id, montant, motif} = req.body;
+    console.log("Données reçues pour le paiement:", req.body);
+    paiementModel.nouvelPaiement(user_id, montant, motif, (err, result) => {
+      console.log(err);
+    if (err) {
+      return res.status(500).json(req.body);}
+      else{
+        res.json({ message: "Paiement enregistré" });
+        console.log(req.body);
 
-//     res.json({ message: "Paiement enregistré" });
-//   });
- const { user_id, montant, motif } = req.body;
+      };
 
-  paiementModel.createPaiement(user_id, montant, motif, (err, result) => {
-    if (err) return res.status(500).json(err);
-
-    res.json({ message: "Paiement enregistré" });
   });
+
 }
 exports.getPaiementUser = (req, res)=>{
     const user_id = req.params.id;

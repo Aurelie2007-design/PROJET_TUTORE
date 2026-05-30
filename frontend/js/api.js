@@ -9,10 +9,9 @@ export function apiFetch(endpoint, options = {}) {
     ...options,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": `Bear ${token}`,
+      "authorization": "Bearer " + getToken(),
       ...options.headers
     }
   }).then(res => res.json());
 }
 
-// export default apiFetch;

@@ -14,3 +14,14 @@ if (!token ) {
         }
     }
 }
+
+const links = document.getElementsByClassName("link");
+const myTableLinks = Array.from(links); 
+myTableLinks.forEach(i=>{
+    const id = i.getAttribute("id");
+    console.log(id);
+    i.addEventListener("click", (event)=>{
+        event.preventDefault();
+        window.location.href = `../${id}/${id}.html`;
+    })
+})

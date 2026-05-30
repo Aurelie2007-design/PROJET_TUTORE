@@ -13,5 +13,9 @@ app.use(express.json());
 app.use("/api", authRoutes);
 app.use("/api", paiementsRoutes);
 app.use("/api", userRoute);
+app.post('/api/data', (req, res) => {
+    console.log('Données reçues :', req.body);
+    res.json({ message: 'Données reçues avec succès !', received: req.body });
+});
 
 module.exports = app;

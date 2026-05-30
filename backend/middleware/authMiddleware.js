@@ -1,14 +1,45 @@
+// const jwt = require("jsonwebtoken");
+
+// module.exports = (req, res, next) => {
+//   const token = req.headers["authorization"];
+//   const tokenValue = token.split(" ")[1];
+//   if (!tokenValue) return res.status(403).json({error:"Token requis"});
+
+//   jwt.verify(tokenValue, "SECRET_KEY", (err, decoded) => {
+//     if (err) return res.status(401).json({error:"Token invalide"});
+
+//     req.user = decoded;
+//     next();
+//   });
+// };
+
+
 const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
-  const token = req.headers["authorization"];
+  const header = req.headers["authorization"];
 
-  if (!token) return res.status(403).json({error:"Token requis"});
+  // 🔴 Vérifier si header existe
+  if (!header) {
+    return res.status(403).json({ error: "Token requis" });
+  }
+
+  // 🔴 Vérifier format "Bearer token"
+  const parts = header.split(" ");
+
+  if (parts.length !== 2 || parts[0] !== "Bearer") {
+    return res.status(401).json({ error: "Format token invalide" });
+  }
+
+  const token = parts[1];
 
   jwt.verify(token, "SECRET_KEY", (err, decoded) => {
-    if (err) return res.status(401).json({error:"Token invalide"});
+    if (err) {
+      return res.status(401).json({ error: "Token invalide" });
+    }
 
     req.user = decoded;
     next();
   });
 };
+
