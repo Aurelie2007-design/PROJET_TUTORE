@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./paiements.css">
 </head>
-<body class="darktheme">
+<body class="lighttheme">
     <div class="body">
         <div class="top-bar">
         <h1>INTERFACE CAISSIER</h1>
@@ -87,42 +87,160 @@
                     <div class="img"></div>
                     <div class="right">
                         <h3>John Doe</h3>
-                        <p>Caissier</p>
+                        <button class="changetheme" id="changetheme">
+                            Changer le theme
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="contenu">
-                
-                <div class="payer"> 
-                    <h2>Nouveau paiement</h2>
-                    <input type="number" id="montant" placeholder="Montant">
-                    <input type="text" id="motif" placeholder="Motif">
-                    <button id="payer">Valider</button>
-                </div>
-                
                 <div class="etudiant-selectionne">
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
+                    <div class="info">
+                        <div class="nom">
+                            <img src="../../../public/assets/profile.jpg" alt="" srcset="">
+                            <p>KAVIRA KASONIA</p>
                         </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
+                         <div class="content1">
+                                <div class="left">
+                                    <p>Frais:</p>
+                                </div>
+                                <div class="millieu">
+                                    <p>valeur</p>
+                                </div>
+                                <div class="right">
+                                    <p>%</p>
+                                </div>
+                            </div>
+                        <div class="content1">
+                                <div class="left">
+                                    <p>Frais academiques</p>
+                                </div>
+                                <div class="millieu">
+                                    <p>60%</p>
+                                </div>
+                                <div class="right">
+                                    <p>300$</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Frais projet tuto</p>
+                                </div>
+                                <div class="millieu">
+                                    <p>0%</p>
+                                </div>
+                                <div class="right">
+                                    <p>0$</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Examen1:</p>
+                                </div>
+                                <div class="millieu">
+                                    <p>0%</p>
+                                </div>
+                                <div class="right">
+                                    <p>10$</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Examen2</p>
+                                </div>
+                                <div class="millieu">
+                                    <p>0%</p>
+                                </div>
+                                <div class="right">
+                                    <p>0$</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Total:</p>
+                                </div>
+                                <div class="millieu">
+                                    <p>55%</p>
+                                </div>
+                                <div class="right">
+                                    <p>400$</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="changer">
+                        <button>
+                            changer d'etudiant
+                        </button>
+                    </div>
+                </div>
+                <div class="payer"> 
+                    <div class="boite">
+                        <h2>Details de paiement</h2>
+                    <p>Type de paiement</p>
+                    <input type="text" id="motif" placeholder="Type de paiement">
+                    <div class="montant">
+                        <div class="left">
+                            <p>Entrer le montant</p>
+                            <input type="number" id="montant" placeholder="Montant">
                         </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
+                        <div class="right">
+                            <p>Choisir la monnaie</p>
+                            <input type="text" id="monnaie" placeholder="USD">
                         </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
+                    </div>
+                    </div>
+                    <div class="valider">
+                        <button id="payer">Valider le paiement</button>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="info">
+                        <h3>Details paiement etudiant</h3>
+                        <div class="content">
+                            <div class="content1">
+                                <div class="left">
+                                    <p>NOM:</p>
+                                </div>
+                                <div class="right">
+                                    <p>KAVIRA KASONIA</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Type de frais:</p>
+                                </div>
+                                <div class="right">
+                                    <p>Frais academique</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Montant: </p>
+                                </div>
+                                <div class="right">
+                                    <p>200$</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Total:</p>
+                                </div>
+                                <div class="right">
+                                    <p>300$</p>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <div class="left">
+                                    <p>Reste a payer:</p>
+                                </div>
+                                <div class="right">
+                                    <p>50$</p>
+                                </div>
+                            </div>
                         </div>
-    
+                    </div>
+                    <div class="valider">
+                        <button>valider et enregistrer le paiement</button>
                     </div>
                 </div>
             </div>

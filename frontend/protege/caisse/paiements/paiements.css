@@ -156,52 +156,164 @@ body{
 .container .page .contenu{
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 .container .page .contenu .payer{
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
     color: var(--color);
     gap: 20px;
+    gap: 20px;
+    padding: 10px;
+    color: var(--color);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    background: var(--color-checked);
+    height: 500px;
+    gap: 10px;
+    padding: 20px;
 }
 .container .page .contenu .payer h2{
     text-align: center;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 20px;
+    margin-top: 10px;
 
 }
-.container .page .contenu .payer button{
+.container .page .contenu .payer .boite{
+
+}
+.container .page .contenu .valider  button{
     padding: 10px;
-    width: 50px;
+    margin: 10px;
+    width: 200%;
     color: var(--color-checked);
-    border-radius: 6px;
+    border-radius: 10px;
     background: var(--color);
+    bottom: 0;
 }
 .container .page .contenu .payer input{
-    padding: 20px;
-    width: 200px;
-    border-radius: 15px;
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+    margin-left: 0;
+    border-radius: 10px;
 }
-.container .page .contenu .etudiant-selectionne .etudiant img {
+.container .page .contenu .payer .montant{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.container .page .contenu .payer .montant .right input{
+    padding: 10px;
+    width: 20%;
+    border-radius: 10px;
+}
+.container .page .contenu .payer .montant .right input{
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.container .page .contenu .etudiant-selectionne{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    color: var(--color);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    background: var(--color-checked);
+    height: 480px;
+    gap: 10px;
+    padding: 40px;
+    padding-bottom: 20px;
+}
+.container .page .contenu .etudiant-selectionne .info{
+    width: 100%;
+}
+.container .page .contenu .etudiant-selectionne .info img{
     height: 70px;
     width: 70px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 2px;
 }
-.container .page .contenu .etudiant-selectionne .etudiant{
-    color: var(--color);
-    display: block;
+.container .page .contenu .etudiant-selectionne .info .nom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.container .page .contenu .etudiant-selectionne .info .content1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;   
+}
+.container .page .contenu .etudiant-selectionne .changer{
+    width: 100%;
+}
+.container .page .contenu .etudiant-selectionne .changer button{
     padding: 10px;
-    border-radius: 15px;
+    margin: 10px;
+    width: 95%;
+    color: var(--color-checked);
+    border-radius: 10px;
+    background: var(--color);
+    bottom: 0;
+}
+.container .page .contenu .details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    padding: 10px;
+    color: var(--color);
     border: var(--border);
     box-shadow: var(--shadow);
+    border-radius: 15px;
     background: var(--color-checked);
-    
-}
-.container .page .contenu .etudiant-selectionne .etudiant .profile{
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    height: 500px;
     gap: 10px;
-    height: fit-content;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.container .page .contenu .details h3{
+    font-size: 28px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+.container .page .contenu .details .content{
+    gap: 10px;
+    padding: 10px;
+}
+.container .page .contenu .details .content .content1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.container .page .contenu .details .valider{
+    width: 100%;
+}
+.container .page .contenu .details .valider button{
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+    color: var(--color-checked);
+    border-radius: 10px;
+    background: var(--color);
+    bottom: 0;
 }

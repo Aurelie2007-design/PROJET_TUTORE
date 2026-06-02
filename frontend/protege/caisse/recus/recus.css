@@ -153,3 +153,73 @@ body{
     height: 50px;
     color: var(--color);
 }
+.container .page .contenu{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 20px;
+    height: 500px;
+    width: 900px;
+    color: var(--color);
+}
+.container .page .contenu .recu{
+    height: auto;
+    width: auto;
+    gap: 20px;
+    padding: 10px;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    background: var(--color-checked);
+    gap: 10px;
+    padding: 40px;
+    padding-bottom: 20px;
+}
+.container .page .contenu .recu .header .left .logo{
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    color: white;
+    background-color: white;
+}
+.container .page .contenu .recu .header .left{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.container .page .contenu .recu h2{
+    text-align: center;
+}
+.container .page .contenu .recu .details .content .boite{
+    display: flex;
+    justify-content: space-between;
+
+}
+.container .page .contenu .recu .details .qr .logo{
+    height: 100px;
+    width: 100px;
+    background: var(--color);
+}
+.container .page .contenu .recu .details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .page .contenu .recu .details .qr{
+    gap: 20px;
+    width: 20%;
+}
+.container .page .contenu .recu .details .content{
+    width: 70%;
+    margin-top: 0;
+    gap: 20px;
+}
+.container .page .contenu .recu .details .content .boite{
+    margin: 20px;
+}
+.container .page .contenu .recu h4{
+    text-align: center;
+    font-size: 15px;
+    margin: 30px;
+}

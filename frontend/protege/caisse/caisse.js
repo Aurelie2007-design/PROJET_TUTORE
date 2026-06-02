@@ -25,3 +25,19 @@ myTableLinks.forEach(i=>{
         window.location.href = `../${id}/${id}.html`;
     })
 })
+
+const themeToggleButton = document.getElementById('changetheme');
+const body = document.body;
+localStorage.setItem("theme", "lighttheme");
+themeToggleButton.addEventListener('click', () => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "lighttheme") {
+        body.classList.remove('lighttheme');
+        body.classList.add('darktheme');
+        localStorage.setItem("theme", "darktheme");
+    } else {
+        body.classList.remove('darktheme');
+        body.classList.add('lighttheme');
+        localStorage.setItem("theme", "lighttheme");
+    } 
+});
