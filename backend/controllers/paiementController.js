@@ -1,6 +1,8 @@
 const db = require("../db/db");
 const paiementModel = require("../models/paiementModel");
 console.log("ROUTE ajouterPaiement appelée");
+
+
 exports.ajouterPaiement = (req, res)=>{
     const {user_id, montant, motif} = req.body;
     console.log("Données reçues pour le paiement:", req.body);
@@ -38,6 +40,16 @@ exports.getAllPaiements = (req, res)=>{
         }
         res.json(result);
     });
-}
+};
+
+exports.getFraisUser = (req, res)=>{
+  const user_id = req.params.id;
+    paiementModel.getFraisUser(user_id, (err, result)=>{
+      if (err) {
+        return res.status(500).json();
+      }
+      res.json(result);
+    })
+};
 
 
