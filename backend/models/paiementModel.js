@@ -42,9 +42,12 @@ const getFraisUser = (user_id, callback)=>{
 const getPaiementByUser = (user_id, callback)=>{
     db.query(
         `SELECT 
+        u.nom AS user_nom,
         u.postnom,
+        u.prenom,
         f.nom AS frais_nom,
         f.montant AS frais_montant,
+        p.montant,
 
         COALESCE(SUM(p.montant), 0) AS total_paye,
 
@@ -62,12 +65,22 @@ const getPaiementByUser = (user_id, callback)=>{
 
         WHERE u.id = ?
 
-        GROUP BY f.nom, f.montant, u.postnom`,
+        GROUP BY f.id, u.postnom`,
         [user_id],
         callback
     );
 
-}
+};
+
+const checkMax = (frais, callback)=>{
+    db.query(
+        `SELECT f.montant FROM frais f WHERE (nom) = (?) `,
+        (frais),
+        callback
+    );
+};
+
+
 
 
 
@@ -77,4 +90,5 @@ module.exports = {
     // createPaiement,
     nouvelPaiement,
     getFraisUser,
+    checkMax
 };

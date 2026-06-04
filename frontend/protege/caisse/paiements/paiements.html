@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./paiements.css">
 </head>
-<body class="lighttheme">
+<body class="">
     <div class="body">
         <div class="top-bar">
         <h1>INTERFACE CAISSIER</h1>
@@ -94,24 +94,30 @@
                 </div>
             </div>
             <div class="contenu">
-                <div class="etudiant-selectionne">
-                    <div class="info">
-                        <div class="nom">
+                <div class="etudiant-selectionne" id="">
+                    <div class="info" id="etudiant">
+                        <div class="nom" id="nom">
                             <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <p>KAVIRA KASONIA</p>
                         </div>
-                         <div class="content1">
+                            <div class="content1">
                                 <div class="left">
                                     <p>Frais:</p>
+                                </div>
+                                <div class="right">
+                                <div class="total">
+                                    <p>total</p>
                                 </div>
                                 <div class="millieu">
                                     <p>valeur</p>
                                 </div>
-                                <div class="right">
-                                    <p>%</p>
+                                <div class="reste">
+                                    <p>reste</p>
                                 </div>
+                                <div class="">
+                                    <p>%</p>
+                                </div></div>
                             </div>
-                        <div class="content1">
+                            <!-- <div class="content1">
                                 <div class="left">
                                     <p>Frais academiques</p>
                                 </div>
@@ -165,35 +171,43 @@
                                 <div class="right">
                                     <p>400$</p>
                                 </div>
-                            </div>
+                            </div> -->
                     </div>
                     <div class="changer">
-                        <button>
+                        <button id="changer_etudiant">
                             changer d'etudiant
                         </button>
                     </div>
                 </div>
-                <div class="payer"> 
-                    <div class="boite">
+                <div class="payer" id="parent"> 
+                    <div class="boite" id="">
                         <h2>Details de paiement</h2>
                     <p>Type de paiement</p>
-                    <input type="text" id="motif" placeholder="Type de paiement">
+                    <!-- <input type="text" id="motif" placeholder="Type de paiement"> -->
+                    <select name="" id="select">
+                    </select>
+                    
+
                     <div class="montant">
                         <div class="left">
                             <p>Entrer le montant</p>
                             <input type="number" id="montant" placeholder="Montant">
                         </div>
                         <div class="right">
-                            <p>Choisir la monnaie</p>
-                            <input type="text" id="monnaie" placeholder="USD">
+                            <p>la monnaie</p>
+                            <!-- <input type="text" id="monnaie" placeholder="USD"> -->
+                            <select name="" id="">
+                                <option value="">USD</option>
+                                <option value="" disabled>FC</option>
+                            </select>
                         </div>
                     </div>
                     </div>
                     <div class="valider">
-                        <button id="payer">Valider le paiement</button>
+                        <button id="payer" class="pay">Valider le paiement</button>
                     </div>
                 </div>
-                <div class="details">
+                <!-- <div class="details">
                     <div class="info">
                         <h3>Details paiement etudiant</h3>
                         <div class="content">
@@ -242,7 +256,7 @@
                     <div class="valider">
                         <button>valider et enregistrer le paiement</button>
                     </div>
-                </div>
+                </div> -->
             </div>
                 
             </div>

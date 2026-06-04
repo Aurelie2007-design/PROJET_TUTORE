@@ -155,8 +155,8 @@ body{
 }
 .container .page .contenu{
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
     gap: 20px;
 }
 .container .page .contenu .payer{
@@ -176,6 +176,7 @@ body{
     height: 500px;
     gap: 10px;
     padding: 20px;
+    width: 30%;
 }
 .container .page .contenu .payer h2{
     text-align: center;
@@ -196,6 +197,13 @@ body{
     border-radius: 10px;
     background: var(--color);
     bottom: 0;
+}
+.container .page .contenu .payer select{
+    padding: 10px;
+    width: 90%;
+    margin: 10px;
+    margin-left: 0;
+    border-radius: 10px;
 }
 .container .page .contenu .payer input{
     padding: 10px;
@@ -222,6 +230,7 @@ body{
 
 }
 .container .page .contenu .etudiant-selectionne{
+    width: 50%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -252,12 +261,21 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 .container .page .contenu .etudiant-selectionne .info .content1{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;   
+    margin-bottom: 40px;   
+}
+.container .page .contenu .etudiant-selectionne .info .content1 .right{
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+}
+.container .page .contenu .etudiant-selectionne .info .content1 .left{
+    width: 100px;
 }
 .container .page .contenu .etudiant-selectionne .changer{
     width: 100%;

@@ -20,8 +20,8 @@ exports.ajouterPaiement = (req, res)=>{
 
 }
 exports.getPaiementUser = (req, res)=>{
-    const user_id = req.params.id;
-    paiementModel.getPaiementByUser(req.user_id, (err, result)=>{
+    const user_id = req.body.user_id;
+    paiementModel.getPaiementByUser(user_id, (err, result)=>{
         if (err) return res.status(500).json();
         res.json(result);
     });
@@ -51,5 +51,18 @@ exports.getFraisUser = (req, res)=>{
       res.json(result);
     })
 };
+exports.checkMax = (req, res)=>{
+  const {frais, montant} = req.body;
+  paiementModel.checkMax(frais, (err, result)=>{
+    if(err){
+      return res.status(500).json();
+    }
+    if (result >= montant) {
+      res.json("true");
+    }else{
+      res.json("false");
+    }
+  })
+}
 
 
