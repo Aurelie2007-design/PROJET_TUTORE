@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil Etudiant</title>
+        <link rel="stylesheet" href="Profil.css">
+    </head>
+    <body>
+       </head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>FSTA CAISSE</h2>
+            <p>Espace Etudiant</p>
+            <ul>
+                <li onclick="navigate('dashboard')">Tableau de bord</li>
+                <li onclick="navigate('Mes paiements')">Mes paiements</li>
+                <li onclick="navigate('Mon solde')">Mon solde</li>
+                <li class="active" onclick="navigate('Profil')">Profil</li>
+                <li class="logout" onclick="logout()">Deconnexion</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+             <h1>INTERFACE ETUDIANT</h1>
+                <div class="user-info">
+                    <div class="user">
+                        <div>
+                            <h4>Nom Etudiant</h4>
+                            <p>Role</p>
+                        </div>
+                    </div>
+                </div>
+            </header>    
+            <section class="profil-section">
+                <h2>Mon profil</h2>
+                <div class="info-personnelle">
+                    <div class="details">
+                        <p><strong>Nom complet :</strong>...</p>
+                        <p><strong>Matricule :</strong>...</p>
+                        <p><strong>Promotion :</strong>...</p>
+                        <p><strong>Email :</strong>...</p>
+                    </div>
+                </div>
+                <div class="historique">
+                    <h3>Historique de paiement rapide</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Detail des frais</th>
+                                <th>Montant</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>../../....</td>
+                                <td>Exemples frais(selon la base de donnees)</td>
+                                <td class="positif">+ ... $</td>
+                            </tr>
+                            <tr>
+                                <td>../../....</td>
+                                <td>Exemples frais(selon la base de donnees)</td>
+                                <td class="negatif">- ... $</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+<script src="../navigation.js"></script>    
+</body>
+</html>
+

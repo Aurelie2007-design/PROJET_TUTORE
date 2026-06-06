@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interface Etudiant - FSTA Caisse</title>
+        <link rel ="stylesheet" href="Mon solde.css">
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <div class="sidebar-top">
+                <h2>FSTA CAISSE</h2>
+                <p>Espace Etudiant</p>
+                </div>
+                <ul>
+                    <li onclick="navigate('dashboard')">Tableau de bord</li>
+                    <li onclick="navigate('Mes paiements')">Mes paiements</li>
+                    <li class="active" onclick="navigate('Mon solde')">Mon solde</li>
+                    <li onclick="navigate('Profil')">Profil</li>
+                    <li class="logout" onclick="logout()">Deconnexion</li>
+                </ul>                    
+            </aside>
+            <main class="main-content">
+                <div class="header">
+                    <h1>INTERFACE ETUDIANT</h1>
+                    <span class="etudiant-label">Etudiant</span>
+                </div>
+                <section class="solde-section">
+                    <div class="card">
+                        <h2>Total paye</h2>
+                        <p><strong>................</strong></p>
+                    </div>    
+                    <div class="card">
+                        <h2>Solde restant</h2>
+                        <p><strong>................</strong></p>                       
+                    </div>
+                </section>
+            </main>
+        </div>    
+    </body>
+    <script src="../navigation.js"></script>
+</html>

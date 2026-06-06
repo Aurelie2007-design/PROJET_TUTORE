@@ -3,12 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interface Etudiant - FSTA Caisse</title>
+    <link rel ="stylesheet" href="dashboard.css">
+
 </head>
 <body>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, sequi ex iure sed doloribus tempore dolorum nihil laboriosam illum dolor cupiditate. Praesentium, asperiores? Cumque rerum perspiciatis illo, obcaecati exercitationem mollitia.</p>
-    <button onclick="logout()">logout</button>
-    <script src="./dashboard.js"></script>
-    <script src="../etudiant.js"></script>
+    <div class="container">
+        <header class="header">
+                <h1>INTERFACE ETUDIANT</h1>
+                <div class="profile">
+                    <p>Etudiant</p>
+                </div>
+            </header>
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>FSTA CAISSE</h2>
+                <p>Espace Etudiant</p>
+            </div>
+            <nav>
+            <ul>
+                <li class="active">Tableau de bord</li>
+                <li onclick="navigate('Mes paiements')">Mes paiements</li>
+                <li onclick="navigate('Mon solde')">Mon solde</li>
+                <li onclick="navigate('Profil')">Profil</li>
+                <li class="logout" onclick="logout()">Deconnexion</li>
+            </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section class="dashboard">
+                <h2>Tableau de bord</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Solde restant</h3>
+                        <p class="amount">___</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total paye</h3>
+                        <p class="amount">___</p>
+                    </div>
+                    <div class="card">
+                        <h3>Total des frais</h3>
+                        <p class="amount">___</p>
+                    </div>
+                    <div class="card">
+                        <h3>Mes paiements</h3>
+                        <p class="amount">___</p>
+                    </div>
+                </div>
+                <div class="charts">
+                <div class="chart">
+                    <h3>Repartitions des frais</h3>
+                    <canvas id="feeschart"></canvas>
+                </div>
+                <div class="info">
+                    <h3>Informations personnelles</h3>
+                    <p><strong>Nom complet :</strong>...</p>
+                    <p><strong>Matricule :</strong>...</p>
+                    <p><strong>Promotion :</strong>...</p>
+                    <p><strong>Email :</strong>...</p>
+                </div>
+                </div>
+             </section>
+        <script src="../navigation.js"></script>                 
 </body>
 </html>
