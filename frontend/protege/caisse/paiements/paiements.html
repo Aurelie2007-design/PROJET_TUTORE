@@ -1,269 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./paiements.css">
-</head>
-<body class="">
+    <link rel="stylesheet" href="./paiements.css" />
+  </head>
+  <body class="">
     <div class="body">
-        <div class="top-bar">
+      <div class="top-bar">
         <h1>INTERFACE CAISSIER</h1>
-    </div>
-    <div class="container">
+      </div>
+      <div class="container">
         <div class="sidebar">
+          <div class="titre">
+            <div class="logo"></div>
             <div class="titre">
-                <div class="logo"></div>
-                <div class="titre">
-                    <h1>FSTA CAISSE</h1>
-                    <p>Caisse</p>
-                </div>
+              <h1>FSTA CAISSE</h1>
+              <p>Caisse</p>
             </div>
-            <div class="child">
-                <div class="boite">
-                <div class="link" id="tableauDeBord">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Tableau de bord</p>
-                            </div>
-                        </div>
+          </div>
+          <div class="child">
+            <div class="boite">
+              <div class="link" id="tableauDeBord">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Tableau de bord</p>
+                  </div>
                 </div>
-                 <div class="link" id="recherche">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Rechercher un etudiant</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="recherche">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Rechercher un etudiant</p>
+                  </div>
                 </div>
-                 <div class="link" id="paiements">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Paiements</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="paiements">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Paiements</p>
+                  </div>
                 </div>
-                 <div class="link" id="recus">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Recus</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="recus">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Recus</p>
+                  </div>
                 </div>
-                 <div class="link" id="rapport">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Rapport</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="rapport">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Rapport</p>
+                  </div>
                 </div>
-                 <div class="link" id="profile">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Profile</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="profile">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Profile</p>
+                  </div>
                 </div>
-                </div>
-                <div class="pied">
-                    <button class="logout">Deconnecter</button>
-                </div>
+              </div>
             </div>
-            
+            <div class="pied">
+              <button class="logout">Deconnecter</button>
+            </div>
+          </div>
         </div>
         <div class="page">
-            <div class="head">
-                <div class="left">
-                    <h2>Tableau de bord</h2>
-                    <p>Samedi 30 Mars 2007</p>
-                </div>
-                <div class="right">
-                    <div class="img"></div>
-                    <div class="right">
-                        <h3>John Doe</h3>
-                        <button class="changetheme" id="changetheme">
-                            Changer le theme
-                        </button>
-                    </div>
-                </div>
+          <div class="head">
+            <div class="left">
+              <h2>Tableau de bord</h2>
+              <p>Samedi 30 Mars 2007</p>
             </div>
-            <div class="contenu">
-                <div class="etudiant-selectionne" id="">
-                    <div class="info" id="etudiant">
-                        <div class="nom" id="nom">
-                            <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                        </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Frais:</p>
-                                </div>
-                                <div class="right">
-                                <div class="total">
-                                    <p>total</p>
-                                </div>
-                                <div class="millieu">
-                                    <p>valeur</p>
-                                </div>
-                                <div class="reste">
-                                    <p>reste</p>
-                                </div>
-                                <div class="">
-                                    <p>%</p>
-                                </div></div>
-                            </div>
-                            <!-- <div class="content1">
-                                <div class="left">
-                                    <p>Frais academiques</p>
-                                </div>
-                                <div class="millieu">
-                                    <p>60%</p>
-                                </div>
-                                <div class="right">
-                                    <p>300$</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Frais projet tuto</p>
-                                </div>
-                                <div class="millieu">
-                                    <p>0%</p>
-                                </div>
-                                <div class="right">
-                                    <p>0$</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Examen1:</p>
-                                </div>
-                                <div class="millieu">
-                                    <p>0%</p>
-                                </div>
-                                <div class="right">
-                                    <p>10$</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Examen2</p>
-                                </div>
-                                <div class="millieu">
-                                    <p>0%</p>
-                                </div>
-                                <div class="right">
-                                    <p>0$</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Total:</p>
-                                </div>
-                                <div class="millieu">
-                                    <p>55%</p>
-                                </div>
-                                <div class="right">
-                                    <p>400$</p>
-                                </div>
-                            </div> -->
-                    </div>
-                    <div class="changer">
-                        <button id="changer_etudiant">
-                            changer d'etudiant
-                        </button>
-                    </div>
+            <div class="right">
+              <div class="img"></div>
+              <div class="right">
+                <h3>John Doe</h3>
+                <button class="changetheme" id="changetheme">
+                  Changer le theme
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="contenu">
+            <div class="etudiant-selectionne">
+              <div class="info" id="etudiant">
+                <div class="nom" id="name">
+                  <img src="../../../public/assets/profile.jpg" alt="" />
+                  <p id="student_name"></p>
                 </div>
-                <div class="payer" id="parent"> 
-                    <div class="boite" id="">
-                        <h2>Details de paiement</h2>
-                    <p>Type de paiement</p>
-                    <!-- <input type="text" id="motif" placeholder="Type de paiement"> -->
-                    <select name="" id="select">
+                <div class="content1 header">
+                  <div class="left"><p>Frais</p></div>
+                  <div class="right">
+                    <div><p>Total</p></div>
+                    <div><p>Payé</p></div>
+                    <div><p>Reste</p></div>
+                    <div><p>%</p></div>
+                  </div>
+                </div>
+                <div id="frais_container"></div>
+              </div>
+              <div class="changer">
+                <button id="changer_etudiant">changer d'etudiant</button>
+              </div>
+            </div>
+            <div class="payer" id="parent">
+              <div class="boite">
+                <h2>Details de paiement</h2>
+                <p>Type de paiement</p>
+                <select id="select"></select>
+                <div class="montant">
+                  <div class="left">
+                    <p>Entrer le montant</p>
+                    <input type="number" id="montant" placeholder="Montant" />
+                  </div>
+                  <div class="right">
+                    <p>Monnaie</p>
+                    <select>
+                      <option value="USD">USD</option>
+                      <option value="FC" disabled>FC</option>
                     </select>
-                    
-
-                    <div class="montant">
-                        <div class="left">
-                            <p>Entrer le montant</p>
-                            <input type="number" id="montant" placeholder="Montant">
-                        </div>
-                        <div class="right">
-                            <p>la monnaie</p>
-                            <!-- <input type="text" id="monnaie" placeholder="USD"> -->
-                            <select name="" id="">
-                                <option value="">USD</option>
-                                <option value="" disabled>FC</option>
-                            </select>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="valider">
-                        <button id="payer" class="pay">Valider le paiement</button>
-                    </div>
+                  </div>
                 </div>
-                <!-- <div class="details">
-                    <div class="info">
-                        <h3>Details paiement etudiant</h3>
-                        <div class="content">
-                            <div class="content1">
-                                <div class="left">
-                                    <p>NOM:</p>
-                                </div>
-                                <div class="right">
-                                    <p>KAVIRA KASONIA</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Type de frais:</p>
-                                </div>
-                                <div class="right">
-                                    <p>Frais academique</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Montant: </p>
-                                </div>
-                                <div class="right">
-                                    <p>200$</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Total:</p>
-                                </div>
-                                <div class="right">
-                                    <p>300$</p>
-                                </div>
-                            </div>
-                            <div class="content1">
-                                <div class="left">
-                                    <p>Reste a payer:</p>
-                                </div>
-                                <div class="right">
-                                    <p>50$</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="valider">
-                        <button>valider et enregistrer le paiement</button>
-                    </div>
-                </div> -->
+              </div>
+              <div class="valider">
+                <button id="payer" class="pay">Valider le paiement</button>
+              </div>
             </div>
-                
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-        <script src="../caisse.js"></script>
-        <script type="module" src="./paiements.js"></script>
-    </body>
-    </html>
+    <script src="../caisse.js"></script>
+    <script type="module" src="./paiements.js"></script>
+  </body>
+</html>
