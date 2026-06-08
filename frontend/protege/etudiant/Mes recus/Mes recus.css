@@ -1,0 +1,47 @@
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f5f6fa;
+  box-sizing: border-box;
+}
+.recus-section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.recus-section h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f0f0f0;
+}
+.btn-download {
+  background: #4b0082;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-download:hover {
+  background: #6a0dad;
+}
