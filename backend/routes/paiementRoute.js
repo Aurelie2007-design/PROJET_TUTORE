@@ -6,8 +6,10 @@ const auth = require("../middleware/authMiddleware");
 const role = require("../middleware/roleMiddleware");
 
 // caisse
-router.post("/payer", paiementController.ajouterPaiement );
-router.get("/paiement/:id", auth, role("caissier"), paiementController.getPaiementUser);
+router.post("/payer",auth, role("caissier"), paiementController.ajouterPaiement );
+router.post("/fraisUser", auth, role("caissier"), paiementController.getFraisUser);
+router.post("/paiements", auth, role("caissier"), paiementController.getPaiementUser);
+router.post("/max_frais", auth, role("caissier"), paiementController.checkMax);
 
 //etudiant
 router.get("/mes_paiements", auth, role("etudiant"), paiementController.getMonPaiements);

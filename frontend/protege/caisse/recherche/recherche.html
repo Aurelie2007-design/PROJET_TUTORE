@@ -1,300 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="recherche.css">
 </head>
 <body class="lighttheme">
+    <link rel="stylesheet" href="recherche.css" />
+  </head>
+  <body class="">
     <div class="body">
-        <div class="top-bar">
+      <div class="top-bar">
         <h1>INTERFACE CAISSIER</h1>
-    </div>
-    <div class="container">
+      </div>
+      <div class="container">
         <div class="sidebar">
+          <div class="titre">
+            <div class="logo"></div>
             <div class="titre">
-                <div class="logo"></div>
-                <div class="titre">
-                    <h1>FSTA CAISSE</h1>
-                    <p>Caisse</p>
-                </div>
+              <h1>FSTA CAISSE</h1>
+              <p>Caisse</p>
             </div>
-            <div class="child">
-                <div class="boite">
-                <div class="link" id="tableauDeBord">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Tableau de bord</p>
-                            </div>
-                        </div>
+          </div>
+          <div class="child">
+            <div class="boite">
+              <div class="link" id="tableauDeBord">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Tableau de bord</p>
+                  </div>
                 </div>
-                 <div class="link" id="recherche">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Rechercher un etudiant</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="recherche">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Rechercher un etudiant</p>
+                  </div>
                 </div>
-                 <div class="link" id="paiements">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Paiements</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="paiements">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Paiements</p>
+                  </div>
                 </div>
-                 <div class="link" id="recus">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Recus</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="recus">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Recus</p>
+                  </div>
                 </div>
-                 <div class="link" id="rapport">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Rapport</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="rapport">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Rapport</p>
+                  </div>
                 </div>
-                 <div class="link" id="profile">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Profile</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="profile">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Profile</p>
+                  </div>
                 </div>
-                </div>
-                <div class="pied">
-                    <button class="logout">Deconnecter</button>
-                </div>
+              </div>
             </div>
-            
+            <div class="pied">
+              <button class="logout">Deconnecter</button>
+            </div>
+          </div>
         </div>
         <div class="page">
-            <div class="head">
-                <div class="left">
-                    <h2>Tableau de bord</h2>
-                    <p>Samedi 30 Mars 2007</p>
-                </div>
-                <div class="right">
-                    <div class="img"></div>
-                    <div class="right">
-                        <h3>John Doe</h3>
-                        <button class="changetheme" id="changetheme">
-                            Changer le theme
-                        </button>
-                    </div>
-                </div>
+          <div class="head">
+            <div class="left">
+              <h2>Tableau de bord</h2>
+              <p>Samedi 30 Mars 2007</p>
             </div>
-            <div class="contenu">
-                <div class="recherche">
-                    <div class="form">
-                        <input type="text" id="matricule" placeholder="matricule">
-                        <button id="chercher">rechercher</button>
-                    </div>
-                </div>
-                <div id="result">
-
-                </div>
-                <div class="resultat" id="resultat">
-                    <!-- <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3>KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div>
-                    <div class="etudiant">
-                        <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" alt="" srcset="">
-                            <div class="info">
-                                <h3 id="nom">KAVIRA KASONIA AURELIE</h3>
-                                <p>Classe: FSTA Genie INFO L1</p>
-                                <p>matricule :<span id="matricule"></span> </p>
-                                <p>sexe: F</p>
-                            </div> 
-                        </div>
-                        <div class="">
-                            <p>Jour de paiement</p>
-                            <p>le 20/12.2025</p>
-                        </div>
-                        <div class="">
-                            <p>Pourcentage</p>
-                            <p>70%</p>
-                        </div>
-                        <div class="">
-                            <p>acces a la salle</p>
-                            <p>OUI</p>
-                        </div>
-
-                    </div> -->
-                </div>
+            <div class="right">
+              <div class="img"></div>
+              <div class="right">
+                <h3>John Doe</h3>
+                <button class="changetheme" id="changetheme">
+                  Changer le theme
+                </button>
+              </div>
             </div>
+          </div>
+          <div class="contenu">
+            <div class="recherche">
+              <div class="form">
+                <input type="text" id="matricule" placeholder="matricule" />
+                <button id="chercher">rechercher</button>
+              </div>
+            </div>
+            <div id="result"></div>
+            <div class="resultat" id="resultat"></div>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
     <script src="../caisse.js"></script>
     <script type="module" src="./recherche.js"></script>
-</body>
+  </body>
 </html>

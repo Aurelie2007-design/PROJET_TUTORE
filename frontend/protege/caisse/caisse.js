@@ -3,7 +3,7 @@ if (!token ) {
     alert("access refuse");
     window.location.href = "../../../public/login/login.html";
 }else{
-    console.log(JSON.parse(atob(token.split('.')[1])).role)
+    // console.log(JSON.parse(atob(token.split('.')[1])).role)
     const role = JSON.parse(atob(token.split('.')[1])).role;
     if (role !== "caissier") {
         alert("vous ne pouver voir la page");
@@ -19,7 +19,6 @@ const links = document.getElementsByClassName("link");
 const myTableLinks = Array.from(links); 
 myTableLinks.forEach(i=>{
     const id = i.getAttribute("id");
-    console.log(id);
     i.addEventListener("click", (event)=>{
         event.preventDefault();
         window.location.href = `../${id}/${id}.html`;
@@ -28,7 +27,12 @@ myTableLinks.forEach(i=>{
 
 const themeToggleButton = document.getElementById('changetheme');
 const body = document.body;
-localStorage.setItem("theme", "lighttheme");
+
+if (!localStorage.getItem("theme")) {
+    localStorage.setItem("theme", "lighttheme");
+}else{ 
+}
+body.classList.add(localStorage.getItem("theme"));
 themeToggleButton.addEventListener('click', () => {
     const theme = localStorage.getItem("theme");
     if (theme === "lighttheme") {
@@ -39,5 +43,5 @@ themeToggleButton.addEventListener('click', () => {
         body.classList.remove('darktheme');
         body.classList.add('lighttheme');
         localStorage.setItem("theme", "lighttheme");
-    } 
+    }   
 });
