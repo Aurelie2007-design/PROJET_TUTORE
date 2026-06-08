@@ -1,113 +1,46 @@
+/* ===== Style global ===== */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background-color: #f5f6fa;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f6fa;
 }
-.container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
+
+.sub-info {
+  font-size: 11px;
+  margin: 2px 0 0 0;
 }
-.sidebar {
-    width: 230px;
-    background: linear-gradient(180deg, #4b0082, #6a0dad);
-    color: #fff;
-    padding: 20px;
-    box-sizing: border-box;
-}
-.sidebar p {
-    text-align: center;
-    margin-bottom: 5px;
-}
-.sidebar p {
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
-.sidebar ul li {
-    padding: 10px 0;
-    cursor: pointer;
-}
-.sidebar ul li:hover,
-.sidebar ul li.active {
-    background-color: rgb(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-.main-contain {
-    flex: 1;
-    width: calc(100%-230px);
-    padding: 20px;
-    background-color: #f5f6fa;
-    box-sizing: border-box;
-}
-.header {
-    width: 100%;
-    background: #4b0082;
-    color: #fff;
-    padding: 15px 25px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-}
-.header h1 {
-    color: #4b0082;
-}
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+
+/* ===== Section Profil ===== */
 .profil-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-.card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+/* ===== Bloc gauche ===== */
+.profil-left h2 {
+  margin-bottom: 10px;
 }
-.info-personnelle,
-.historique {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
-.info-personnelle {
-    display: flex;
-    align-items: center;
+
+.table th {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 5px;
 }
-.details p {
-    margin: 5px 0;
+
+.table td {
+  font-size: 14px;
+  padding: 5px 0;
 }
-.historique h3 {
-    margin-bottom: 10-px;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th,td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-}
-.positif {
-    color: green;
-    font-weight: bold;
-}
-.negatif {
-    color: red;
-    font-weight: bold;
+
+/* ===== Bloc droit ===== */
+.profil-right p {
+  font-size: 14px;
+  margin: 5px 0;
 }

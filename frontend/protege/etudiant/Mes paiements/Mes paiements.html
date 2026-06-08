@@ -5,33 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Interface Etudiant - FSTA Caisse</title>
         <link rel ="stylesheet" href="Mes paiements.css">
+        <link rel="stylesheet" href="../etudiant.css">
     </head>
     <body>
        </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
+            <header class="header">
+                <h1>INTERFACE ETUDIANT</h1>
+                <div class="profile">
+                    <p>Etudiant</p>
+                </div>
+            </header>
+            <aside class="sidebar">
             <div class="logo">
                 <h2>FSTA CAISSE</h2>
                 <p>Espace Etudiant</p>
             </div>
             <nav>
             <ul>
-                <li onclick="navigate('dashboard')">Tableau de bord</li>
-                <li class="active">Mes paiements</li>
+                <li class="active" onclick="navigate('dashboard')">Tableau de bord</li>
+                <li onclick="navigate('Mes paiements')">Mes paiements</li>
                 <li onclick="navigate('Mon solde')">Mon solde</li>
-                <li onclick="navigate('profil')">Profil</li>
+                <li onclick="navigate('Profil')">Profil</li>
                 <li class="logout" onclick="logout()">Deconnexion</li>
             </ul>
             </nav>
-        </aside>
+            </aside>
         <main class="main-content">
-            <header class="header">
+            <div class="main-content-header">
                 <div><h1>Mes paiements</h1>
                 <p class="breadcrumb">Acceuil>Mes paiements</p>
                 </div>
-            </header>
-            <section class="payments">
+            </div>
+            <div class="payments">
                 <table>
                     <thead>
                         <tr>
@@ -45,7 +52,7 @@
                     <tbody>
                     </tbody>
                 </table>
-            </section>
+            </div>
         </main>
     </div>
     </body>

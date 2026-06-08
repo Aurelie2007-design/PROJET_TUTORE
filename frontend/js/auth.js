@@ -1,4 +1,4 @@
-function checkAuth() {
+export function checkAuth() {
   const token = localStorage.getItem("token");
 
   if (!token) {
@@ -14,7 +14,7 @@ function checkAuth() {
     window.location.href = "../login/login.html";
   }
 }
-function logout(){
+export function logout(){
     localStorage.removeItem("token");
-    window.location.href("../../public/login.html")
+    window.location.href = "../../public/login.html";
 }

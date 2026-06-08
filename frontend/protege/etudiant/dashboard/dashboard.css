@@ -1,61 +1,4 @@
-* {
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "poppins", sans-serif;
-}
-.container {
-    display: flex;
-    height: calc(100vh - 70px);
-    margin-top: 53px;
-    background-color: #f5f6fa;
-}
-.sidebar {
-    width: 230px;
-    background-color: #4b0082; 
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 20px 0;
-}
-.sidebar .logo {
-    text-align: center;
-    margin-bottom: 60px;
-}
-.sidebar .logo h2 {
-    font-size: 20px;
-    font-weight: 600;
-}
-.sidebar .logo p {
-    font-size: 13px;
-    opacity: 0.8;
-}
-.sidebar nav {
-    margin-top: 0;
-}
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-}
-.sidebar nav ul li {
-    padding: 12px 25px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s;
-}
-.sidebar nav ul li:hover,
-.sidebar nav ul il.active {
-       background-attachment: #5e17eb; 
-       border-left: 4px solid #fff;
-}
-.sidebar .logout {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.8;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
+
 .main-content {
     flex: 1;
     display: flex;
@@ -65,31 +8,7 @@
     padding-top: 30px;
     background-color: #f5f6fa;
 }
-.header {
-    background-color: #4b0082;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
-.header h1 {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0 auto;
-    text-align: center;
-}
-.header .user {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+
 .dashboard h2 {
     font-size: 18px;
     margin-bottom: 20px;
