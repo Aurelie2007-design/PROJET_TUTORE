@@ -3,16 +3,22 @@ const paiementModel = require("../models/paiementModel");
 console.log("ROUTE ajouterPaiement appelée");
 
 exports.ajouterPaiement = (req, res) => {
-  const { user_id, montant, motif } = req.body;
-  paiementModel.createPaiement(user_id, montant, motif, (err, result) => {
-    console.log(err);
-    if (err) {
-      return res.status(500).json(req.body);
-    } else {
-      res.json({ message: "Paiement enregistré" });
-      console.log(req.body);
-    }
-  });
+  const { user_id, montant, motif, recu_id } = req.body;
+  paiementModel.nouvelPaiement(
+    user_id,
+    montant,
+    motif,
+    recu_id,
+    (err, result) => {
+      console.log(err);
+      if (err) {
+        return res.status(500).json(req.body);
+      } else {
+        res.json({ message: "Paiement enregistré" });
+        console.log(req.body);
+      }
+    },
+  );
 };
 exports.getPaiementUser = (req, res) => {
   const user_id = req.body.user_id;
@@ -22,9 +28,9 @@ exports.getPaiementUser = (req, res) => {
   });
 };
 exports.getMonPaiements = (req, res) => {
-  paiementModel.getPaiementsByUser(req.user.id, (err, result) => {
+  const user_id = req.body.user_id;
+  paiementModel.getPaiementsByUser(user_id, (err, result) => {
     if (err) return res.status(500).json(err);
-
     res.json(result);
   });
 };
@@ -46,12 +52,37 @@ exports.getFraisUser = (req, res) => {
     res.json(result);
   });
 };
-exports.checkMax = (req, res) => {
-  const { frais, user_id } = req.body;
-  paiementModel.checkMax(frais, user_id, (err, result) => {
+exports.recu = (req, res) => {
+  const { user_id } = req.body;
+
+  paiementModel.CreateRecu(user_id, (err, result) => {
     if (err) {
-      return res.status(500).json(err);
+      console.log("Erreur création reçu:", err);
+      return res.status(500).json({
+        success: false,
+        message: "Erreur lors de la création du reçu",
+      });
     }
-    res.json(result);
+
+    res.json({
+      success: true,
+      recu_id: result,
+    });
+  });
+};
+
+exports.getRecuId = (req, res) => {
+  const { recu_id } = req.body;
+  paiementModel.getRecuId(recu_id, (err, result) => {
+    if (err) {
+      return res.status(500).json({
+        success: false,
+        message: "Erreur lors de la récupération du reçu",
+      });
+    }
+    res.json({
+      success: true,
+      data: result,
+    });
   });
 };

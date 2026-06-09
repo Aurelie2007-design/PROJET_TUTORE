@@ -13,11 +13,9 @@ exports.login = (req, res) => {
 
     const user = results[0];
 
-    const token = jwt.sign(
-      { id: user.id, role: user.role },
-      "SECRET_KEY",
-      { expiresIn: "1h" }
-    );
+    const token = jwt.sign({ id: user.id, role: user.role }, "SECRET_KEY", {
+      expiresIn: "3h",
+    });
 
     res.json({ token });
   });
@@ -31,9 +29,9 @@ exports.getProfile = (req, res) => {
   });
 };
 
-exports.recherche = (req, res)=>{
-  const {matricule} = req.query;
-  userModel.chercheUser(matricule, (err, result)=>{
+exports.recherche = (req, res) => {
+  const { matricule } = req.query;
+  userModel.chercheUser(matricule, (err, result) => {
     if (err) {
       return res.status(500).json(err);
     }

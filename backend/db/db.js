@@ -4,7 +4,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "", // WAMP par défaut
-  database: "ULPGL"
+  database: "ULPGL",
 });
 
 db.connect((err) => {

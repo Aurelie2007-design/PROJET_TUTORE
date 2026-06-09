@@ -1,91 +1,73 @@
-import {apiFetch} from "../../../js/api.js";
+import { apiFetch } from "../../../js/api.js";
 
 document.getElementById("chercher").addEventListener("click", look);
 const token = localStorage.getItem("token");
-function chercher(){
-    const terme = document.getElementById("matricule").value;
-    apiFetch(`/recherche?matricule=${terme}`)
-    .then(data => {
-      const list = document.getElementById("result");
-      list.innerHTML = "";
-      if(!data){
-        list.innerText= "";
-        console.log("aucun utilisateur trouve");
-      } else{
-        
-        data.forEach(u => {
-          const li = document.createElement("li");
-          li.innerText = `${u.nom} ${u.prenom} (${u.matricule})`;
-    
-          li.onclick = () => {
-            localStorage.setItem("selectedUser", JSON.stringify(u));
-            window.location.href = "../paiements/paiements.html";
-          };
-          list.appendChild(li);
-      });
+
+async function look() {
+  const terme = document.getElementById("matricule").value;
+  const list = document.getElementById("resultat");
+
+  list.innerHTML = "";
+  if (terme === null) {
+    alert("enter un matricule pour commencer la recherche");
+  } else {
+    try {
+      const data = await apiFetch(`/recherche?matricule=${terme}`);
+
+      if (data.message) {
+        list.innerHTML = `<div class='erreur'>${data.message}</div>`;
+        return;
       }
-  }).catch(error => {
-    console.log("une erreur est survenue");
-  })
-  ;
-}
 
-function look(){
-    const terme = document.getElementById("matricule").value;
-    apiFetch(`/recherche?matricule=${terme}`)
-    .then(data => {
-      const list = document.getElementById("resultat");
-      list.innerHTML = "";
-      if(!data){
-        // list.innerText= "";
-        console.log("aucun utilisateur trouve");
-        list.innerText= "aucun resulat trouve";
-      } else{
-        
-        data.forEach(u => {
-          // const li = document.createElement("li");
-          // li.innerText = `${u.nom} ${u.prenom} (${u.matricule})`;
-          const div = document.createElement("div");
-          div.classList.add("etudiant");
+      if (!Array.isArray(data)) {
+        console.log("format inattendu :", data);
+        list.innerText = "Erreur de format des données";
+        return;
+      }
 
-          div.innerHTML =`
-          <div class="profile">
-          <img src="../../../public/assets/profile.jpg" alt="" srcset="">
+      if (data.length === 0) {
+        list.innerHTML = "<div class='erreur'>Aucun résultat trouvé</div>";
+        return;
+      }
+
+      data.forEach((u) => {
+        const div = document.createElement("div");
+        div.classList.add("etudiant");
+
+        div.innerHTML = `
+        <div class="profile">
+          <img src="../../../public/assets/profile.jpg">
           <div class="info">
-          <h3 id="nom">${u.nom} ${u.prenom}</h3>
-          <p>Classe: FSTA Genie INFO L1</p>
-          <p>matricule :<span id="matricule">${u.matricule}</span> </p>
-          <p>sexe: F</p>
+            <h3>${u.nom} ${u.prenom}</h3>
+            <p>Classe: FSTA Genie INFO L1</p>
+            <p>Matricule : ${u.matricule}</p>
+            <p>Sexe: F</p>
           </div> 
-          </div>
-          <div class="">
+        </div>
+        <div>
           <p>Jour de paiement</p>
-          <p>le 20/12.2025</p>
-          </div>
-          <div class="">
+          <p>le 20/12/2025</p>
+        </div>
+        <div>
           <p>Pourcentage</p>
           <p>70%</p>
-          </div>
-          <div class="">
-          <p>acces a la salle</p>
+        </div>
+        <div>
+          <p>Accès à la salle</p>
           <p>OUI</p>
-          </div>
-          
-          `
-          list.appendChild(div);
-          
-          // const etudiant = document.getElementById("etudiant");
-          div.onclick = () => {
-            localStorage.setItem("selectedUser", JSON.stringify(u));
-            window.location.href = "../paiements/paiements.html";
-          };
-          list.appendChild(div);
-      });
-      }
-  }).catch(error => {
-    console.log("une erreur est survenue");
-    console.log(error);
-  })
-  ;
-}
+        </div>
+      `;
 
+        div.onclick = () => {
+          localStorage.setItem("selectedUser", JSON.stringify(u));
+          window.location.href = "../paiements/paiements.html";
+        };
+
+        list.appendChild(div);
+      });
+    } catch (error) {
+      console.log("une erreur est survenue", error);
+      list.innerText = "Erreur lors de la requête";
+    }
+  }
+}

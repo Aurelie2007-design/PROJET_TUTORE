@@ -10,7 +10,7 @@
   --shadow: 0px 0.3px 9px rgb(190, 190, 190);
   --border: 1px solid rgb(190, 190, 190);
   --shadow-gd: 0px 6px 12px rgba(10, 10, 10, 0.4);
-  --linked:  
+  --linked:                
 ;
 }
 .darktheme {
@@ -152,4 +152,133 @@ body {
   align-items: center;
   height: 50px;
   color: var(--color);
+}
+
+.container .page .contenu .resultat .etudiant .profile {
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.container .page .contenu .resultat {
+  display: block;
+  /* grid-template-columns: repeat(1, 1fr); */
+  justify-content: center;
+  padding: 20px;
+  overflow-y: scroll;
+  height: 500px;
+  scrollbar-width: none;
+  gap: 10px;
+}
+.container .page .contenu .resultat {
+  margin: 10px;
+  height: 70px;
+  width: auto;
+  border: var(--border);
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  border-radius: 15px;
+  padding: 10px;
+  color: var(--color);
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+.container .page .contenu .resultat img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.container .page .contenu .resultat:hover {
+  background: var(--color);
+  color: var(--color-checked);
+  box-shadow: var(--shadow);
+}
+.container .page .contenu .resultat .info {
+  gap: 10px;
+}
+.container .page .contenu .resultat .profile {
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+#contenu {
+  max-width: 900px;
+  padding: 40px;
+  width: auto;
+  height: 500px;
+  margin: auto;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* Carte reçu */
+.recu {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.recu:hover {
+  transform: translateY(-3px);
+}
+
+/* Titre */
+.recu h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* Nom */
+.recu p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Total */
+.recu p b {
+  color: #27ae60;
+  font-size: 18px;
+}
+
+/* Tableau */
+table {
+  margin-top: 15px;
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Header */
+th {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Lignes */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Effet hover ligne */
+tr:hover td {
+  background: #f9fafb;
+}
+
+/* Séparateur */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
 }

@@ -6,15 +6,37 @@ const auth = require("../middleware/authMiddleware");
 const role = require("../middleware/roleMiddleware");
 
 // caisse
-router.post("/payer",auth, role("caissier"), paiementController.ajouterPaiement );
-router.post("/fraisUser", auth, role("caissier"), paiementController.getFraisUser);
-router.post("/paiements", auth, role("caissier"), paiementController.getPaiementUser);
-router.post("/max_frais", auth, role("caissier"), paiementController.checkMax);
+router.post(
+  "/payer",
+  auth,
+  role("caissier"),
+  paiementController.ajouterPaiement,
+);
+router.post(
+  "/fraisUser",
+  auth,
+  role("caissier"),
+  paiementController.getFraisUser,
+);
+router.post(
+  "/paiements",
+  auth,
+  role("caissier"),
+  paiementController.getPaiementUser,
+);
+router.post("/recu", auth, role("caissier"), paiementController.recu);
 
-//etudiant
-router.get("/mes_paiements", auth, role("etudiant"), paiementController.getMonPaiements);
+router.get(
+  "/mes_paiements",
+  auth,
+  role("etudiant"),
+  paiementController.getMonPaiements,
+);
 
-//directeur finacier
-router.get("/paiments", auth, role("directeur"), paiementController.getAllPaiements);
+router.post("/getRecuId", auth, role("caissier"), paiementController.getRecuId);
+
+router.get("/recu/:id", auth, role("caissier"), paiementController.getRecuId);
+
+router.post("/getTotal/", auth, role("caissier", paiementController.total));
 
 module.exports = router;
