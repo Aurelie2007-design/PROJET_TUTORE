@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="tableauDeBord.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body class="">
     <div class="body">
@@ -96,117 +97,34 @@
             <div class="content_stat">
               <div class="content1">
                 <h3>Encaissement du jour</h3>
-                <h2>500 $</h2>
+                <h2 id="content1">500 $</h2>
                 <p>+ 12 % par rapport a hier</p>
               </div>
               <div class="content2">
                 <h3>moyenne par etudiant</h3>
-                <h2>100 $</h2>
+                <h2 id="content2">100 $</h2>
                 <p>+10 % par rapport a hier</p>
               </div>
               <div class="content3">
                 <h3>Nombre total d'etudiants</h3>
-                <h2>50</h2>
+                <h2 id="content3">50</h2>
                 <p></p>
               </div>
-              <div class="content4">
-                <h3>Recus generes</h3>
-                <h2>25</h2>
+              <div class="content4" id="content4">
+                <h3>Nombre des recus</h3>
+                <h2 id="content3">25</h2>
               </div>
             </div>
             <div class="table">
               <div class="tableau">
                 <h3>Paiement de la semaine</h3>
+                <canvas id="chart"></canvas>
               </div>
               <div class="liste">
                 <h2>Dernieres paiements</h2>
-                <div class="boite">
-                  <div class="etudiant">
-                    <div class="profile">
-                      <img src="../../../public/assets/profile.jpg" />
-                      <div class="indentite">
-                        <h4>KAVIRA KASONIA</h4>
-                        <p>9h00</p>
-                      </div>
-                    </div>
-
-                    <div class="info">
-                      <h5>200$</h5>
-                      <p>FSTA L1</p>
-                    </div>
-                  </div>
-                  <div class="etudiant">
-                    <div class="profile">
-                      <img src="../../../public/assets/profile.jpg" />
-                      <div class="indentite">
-                        <h4>KAVIRA KASONIA</h4>
-                        <p>9h00</p>
-                      </div>
-                    </div>
-
-                    <div class="info">
-                      <h5>200$</h5>
-                      <p>FSTA L1</p>
-                    </div>
-                  </div>
-                  <div class="etudiant">
-                    <div class="profile">
-                      <img src="../../../public/assets/profile.jpg" />
-                      <div class="indentite">
-                        <h4>KAVIRA KASONIA</h4>
-                        <p>9h00</p>
-                      </div>
-                    </div>
-
-                    <div class="info">
-                      <h5>200$</h5>
-                      <p>FSTA L1</p>
-                    </div>
-                  </div>
-                  <div class="etudiant">
-                    <div class="profile">
-                      <img src="../../../public/assets/profile.jpg" />
-                      <div class="indentite">
-                        <h4>KAVIRA KASONIA</h4>
-                        <p>9h00</p>
-                      </div>
-                    </div>
-
-                    <div class="info">
-                      <h5>200$</h5>
-                      <p>FSTA L1</p>
-                    </div>
-                  </div>
-                  <var
-                    ><div class="etudiant">
-                      <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" />
-                        <div class="indentite">
-                          <h4>KAVIRA KASONIA</h4>
-                          <p>9h00</p>
-                        </div>
-                      </div>
-
-                      <div class="info">
-                        <h5>200$</h5>
-                        <p>FSTA L1</p>
-                      </div>
-                    </div>
-                    <div class="etudiant">
-                      <div class="profile">
-                        <img src="../../../public/assets/profile.jpg" />
-                        <div class="indentite">
-                          <h4>KAVIRA KASONIA</h4>
-                          <p>9h00</p>
-                        </div>
-                      </div>
-
-                      <div class="info">
-                        <h5>200$</h5>
-                        <p>FSTA L1</p>
-                      </div>
-                    </div></var
-                  >
+                <div class="boite" id="boite"></div>
+                <div class="btn">
+                  <button id="voir-plus">Voir plus</button>
                 </div>
               </div>
             </div>

@@ -1,72 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interface Etudiant - FSTA Caisse</title>
-    <link rel ="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="../etudiant.css">
-
-</head>
-<body>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="../etudiant.css" />
+  </head>
+  <body>
     <div class="container">
-            <header class="header">
-                <h1>INTERFACE ETUDIANT</h1>
-                <div class="profile">
-                    <p>Etudiant</p>
-                </div>
-            </header>
-        <aside class="sidebar">
-            <div class="logo">
-                <h2>FSTA CAISSE</h2>
-                <p>Espace Etudiant</p>
+      <header class="header">
+        <h1>INTERFACE ETUDIANT</h1>
+        <div class="profile">
+          <p>Etudiant</p>
+        </div>
+      </header>
+      <aside class="sidebar">
+        <div class="logo">
+          <h2>FSTA CAISSE</h2>
+          <p>Espace Etudiant</p>
+        </div>
+        <nav>
+          <ul>
+            <li class="active">Tableau de bord</li>
+            <li onclick="navigate('Mes paiements')">Mes paiements</li>
+            <li onclick="navigate('Mon profil')">Mon profil</li>
+            <li class="logout" onclick="logout()">Deconnexion</li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <section class="dashboard">
+          <h2>Tableau de bord</h2>
+          <div class="cards">
+            <div class="card">
+              <h3>Solde restant</h3>
+              <p class="amount" id="solde_restant">___</p>
             </div>
-            <nav>
-            <ul>
-                <li class="active">Tableau de bord</li>
-                <li onclick="navigate('Mes paiements')">Mes paiements</li>
-                <li onclick="navigate('Mon solde')">Mon solde</li>
-                <li onclick="navigate('Mon profil')">Mon profil</li>
-                <li onclick="navigate('Mes recus')">Mes recus</li>
-                <li class="logout" onclick="logout()">Deconnexion</li>
-            </ul>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <section class="dashboard">
-                <h2>Tableau de bord</h2>
-                <div class="cards">
-                    <div class="card">
-                        <h3>Solde restant</h3>
-                        <p class="amount">___</p>
-                    </div>
-                    <div class="card">
-                        <h3>Total paye</h3>
-                        <p class="amount">___</p>
-                    </div>
-                    <div class="card">
-                        <h3>Total des frais</h3>
-                        <p class="amount">___</p>
-                    </div>
-                    <div class="card">
-                        <h3>Mes paiements</h3>
-                        <p class="amount">___</p>
-                    </div>
-                </div>
-                <div class="charts">
-                <div class="chart">
-                    <h3>Repartitions des frais</h3>
-                    <canvas id="feeschart"></canvas>
-                </div>
-                <div class="info">
-                    <h3>Informations personnelles</h3>
-                    <p><strong>Nom complet :</strong>...</p>
-                    <p><strong>Matricule :</strong>...</p>
-                    <p><strong>Promotion :</strong>...</p>
-                    <p><strong>Email :</strong>...</p>
-                </div>
-                </div>
-             </section>
-        <script src="../navigation.js"></script>                 
-</body>
+            <div class="card">
+              <h3>Total paye</h3>
+              <p class="amount" id="solde_total">___</p>
+            </div>
+            <div class="card">
+              <h3>Total des frais</h3>
+              <p class="amount" id="frais_total">___</p>
+            </div>
+            <div class="card">
+              <h3>Pourcentage</h3>
+              <p class="amount" id="pourcent">___</p>
+            </div>
+          </div>
+          <div class="charts">
+            <div class="chart">
+              <h3>Repartitions des frais</h3>
+              <div class="feeschart" id="frais"></div>
+            </div>
+            <div class="info" id="">
+              <h3>Informations personnelles</h3>
+              <div class="" id="info">
+                <p><strong>Nom complet :</strong>...</p>
+                <p><strong>Matricule :</strong>...</p>
+                <p><strong>Promotion :</strong>...</p>
+                <p><strong>Email :</strong>...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="" id="student_name"></div>
+          <div class="" id="frais_container"></div>
+        </section>
+      </main>
+    </div>
+    <script src="../navigation.js"></script>
+    <script type="module" src="./dashboard.js"></script>
+  </body>
 </html>

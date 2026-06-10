@@ -10,7 +10,7 @@
   --shadow: 0px 0.3px 9px rgb(190, 190, 190);
   --border: 1px solid rgb(190, 190, 190);
   --shadow-gd: 0px 6px 12px rgba(10, 10, 10, 0.4);
-  --linked:  
+  --linked:                     
 ;
 }
 .darktheme {
@@ -37,7 +37,7 @@ body {
   background: var(--color);
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .top-bar {
   width: 100%;
@@ -192,8 +192,29 @@ body {
   text-align: center;
 }
 .container .page .contenu .recu .details .content .boite {
-  display: flex;
+  /* display: flex;
+  justify-content: space-between; */
+  margin: 20px;
+  display: grid;
   justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  /* margin-left: 20px; */
+  gap: 10px;
+}
+.container .page .contenu .recu .details .content .boite_paie {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 20px;
+  gap: 10px;
+}
+.contenu .recu .details .content .boite_paie .right {
+  display: flex;
+  justify-content: right;
+}
+.contenu .recu .details .content .boite .right {
+  display: flex;
+  justify-content: right;
 }
 .container .page .contenu .recu .details .qr .logo {
   height: 100px;
@@ -214,11 +235,30 @@ body {
   margin-top: 0;
   gap: 20px;
 }
-.container .page .contenu .recu .details .content .boite {
-  margin: 20px;
-}
+
 .container .page .contenu .recu h4 {
   text-align: center;
   font-size: 15px;
   margin: 30px;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #recu_etudiant,
+  #recu_etudiant * {
+    visibility: visible;
+  }
+
+  #recu_etudiant {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

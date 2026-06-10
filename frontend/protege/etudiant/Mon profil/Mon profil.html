@@ -24,9 +24,7 @@
           <ul>
             <li onclick="navigate('dashboard')">Tableau de bord</li>
             <li onclick="navigate('Mes paiements')">Mes paiements</li>
-            <li onclick="navigate('Mon solde')">Mon solde</li>
             <li class="active" onclick="navigate('Mon profil')">Mon profil</li>
-            <li onclick="navigate('Mes recus')">Mes recus</li>
             <li class="logout" onclick="logout()">Deconnexion</li>
           </ul>
         </nav>
@@ -39,33 +37,7 @@
         </header>
 
         <section class="profil-section">
-          <div class="profil-left">
-            <h2>Mon profil</h2>
-            <h3>Historique de paiement rapide</h3>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Détail des frais</th>
-                  <th>Montant</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>../../....</td>
-                  <td>Exemples frais (selon la base de données) + ...</td>
-                  <td>... $</td>
-                </tr>
-                <tr>
-                  <td>../../....</td>
-                  <td>Exemples frais (selon la base de données) - ...</td>
-                  <td>... $</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="profil-right">
+          <div class="profil" id="profil">
             <p><strong>Nom complet :</strong> ...</p>
             <p><strong>Matricule :</strong> ...</p>
             <p><strong>Promotion :</strong> ...</p>
@@ -75,5 +47,6 @@
       </main>
     </div>
     <script src="../navigation.js"></script>
+    <script type="module" src="./monProfil.js"></script>
   </body>
 </html>

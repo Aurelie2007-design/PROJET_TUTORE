@@ -1,189 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./recus.css">
-</head>
-<body>
-<body class="">
+    <link rel="stylesheet" href="./recus.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body class="">
     <div class="body">
-        <div class="top-bar">
+      <div class="top-bar">
         <h1>INTERFACE CAISSIER</h1>
-    </div>
-    <div class="container">
+      </div>
+      <div class="container">
         <div class="sidebar">
+          <div class="titre">
+            <div class="logo"></div>
             <div class="titre">
-                <div class="logo"></div>
-                <div class="titre">
-                    <h1>FSTA CAISSE</h1>
-                    <p>Caisse</p>
-                </div>
+              <h1>FSTA CAISSE</h1>
+              <p>Caisse</p>
             </div>
-            <div class="child">
-                <div class="boite">
-                <div class="link" id="tableauDeBord">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Tableau de bord</p>
-                            </div>
-                        </div>
+          </div>
+          <div class="child">
+            <div class="boite">
+              <div class="link" id="tableauDeBord">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Tableau de bord</p>
+                  </div>
                 </div>
-                 <div class="link" id="recherche">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Rechercher un etudiant</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="recherche">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Rechercher un etudiant</p>
+                  </div>
                 </div>
-                 <div class="link" id="paiements">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Paiements</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="paiements">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Paiements</p>
+                  </div>
                 </div>
-                 <div class="link" id="recus">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Recus</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="recus">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Recus</p>
+                  </div>
                 </div>
-                 <div class="link" id="rapport">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Rapport</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="rapport">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Rapport</p>
+                  </div>
                 </div>
-                 <div class="link" id="profile">
-                        <div class="btn">
-                            <div class="logo"></div>
-                            <div class="titre">
-                                <p>Profile</p>
-                            </div>
-                        </div>
+              </div>
+              <div class="link" id="profile">
+                <div class="btn">
+                  <div class="logo"></div>
+                  <div class="titre">
+                    <p>Profile</p>
+                  </div>
                 </div>
-                </div>
-                <div class="pied">
-                    <button class="logout">Deconnecter</button>
-                </div>
+              </div>
             </div>
-            
+            <div class="pied">
+              <button class="logout">Deconnecter</button>
+            </div>
+          </div>
         </div>
         <div class="page">
-            <div class="head">
+          <div class="head">
+            <div class="left">
+              <h2>Tableau de bord</h2>
+              <p>Samedi 30 Mars 2007</p>
+            </div>
+            <div class="right">
+              <div class="img"></div>
+              <div class="right">
+                <h3>John Doe</h3>
+                <button class="changetheme" id="changetheme">
+                  Changer le theme
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="contenu">
+            <div class="recu" id="recu_etudiant">
+              <div class="header">
                 <div class="left">
-                    <h2>Tableau de bord</h2>
-                    <p>Samedi 30 Mars 2007</p>
+                  <div class="logo"></div>
+                  <p>FACULTE DE SCIENCES ET TECHNOLOGIES APPLIQUES</p>
                 </div>
-                <div class="right">
-                    <div class="img"></div>
+              </div>
+              <h2>RECU DE PAIEMENT</h2>
+              <div class="details">
+                <div class="content">
+                  <div class="boite" id="nom">
+                    <div class="left">
+                      <p>Nom d'etudiant:</p>
+                    </div>
                     <div class="right">
-                        <h3>John Doe</h3>
-                        <button class="changetheme" id="changetheme">
-                            Changer le theme
-                        </button>
+                      <p>KAVIRA KASONIA AURELIE</p>
                     </div>
+                  </div>
+                  <div class="boite" id="classe">
+                    <div class="left">
+                      <p>Classe:</p>
+                    </div>
+                    <div class="right">
+                      <p>L1</p>
+                    </div>
+                  </div>
+                  <div class="boite" id="matricule">
+                    <div class="left">
+                      <p>Matricule</p>
+                    </div>
+                    <div class="right">
+                      <p>100002</p>
+                    </div>
+                  </div>
+                  <div class="boite" id="date">
+                    <div class="left">
+                      <p>Date</p>
+                    </div>
+                    <div class="right">
+                      <p>01 juin 2026</p>
+                    </div>
+                  </div>
+                  <div class="boite_paie" id="recu"></div>
                 </div>
+                <div class="qr" id="">
+                  <p>recu de paiemment</p>
+                  <div class="logo" id="qrCode"></div>
+                  <p>QR code du recu</p>
+                </div>
+              </div>
+              <h4>MERCI POUR VOTRE PAIEMENT</h4>
             </div>
-            <div class="contenu">
-                <div class="recu">
-                    <div class="header">
-                        <div class="left">
-                            <div class="logo"></div>
-                            <p>FACULTE DE SCIENCES ET TECHNOLOGIES APPLIQUES</p>
-                        </div>
-                    </div>
-                    <h2>RECU DE PAIEMENT</h2>
-                    <div class="details">
-                        <div class="content">
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Nom d'etudiant: </p>
-                                </div>
-                                <div class="right">
-                                    <p>KAVIRA KASONIA AURELIE</p>
-                                </div>
-                            </div>
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Classe: </p>
-                                </div>
-                                <div class="right">
-                                    <p>L1</p>
-                                </div>
-                            </div>
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Matricule</p>
-                                </div>
-                                <div class="right">
-                                    <p>100002</p>
-                                </div>
-                            </div>
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Date </p>
-                                </div>
-                                <div class="right">
-                                    <p>01 juin 2026</p>
-                                </div>
-                            </div>
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Montant </p>
-                                </div>
-                                <div class="right">
-                                    <p>200$</p>
-                                </div>
-                            </div>
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Sujet: </p>
-                                </div>
-                                <div class="right">
-                                    <p>Frais academiques</p>
-                                </div>
-                            </div>
-                            <div class="boite">
-                                <div class="left">
-                                    <p>Nom d'etudiant: </p>
-                                </div>
-                                <div class="right">
-                                    <p>KAVIRA KASONIA AURELIE</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="qr">
-                            <p>recu de paiemment</p>
-                            <div class="logo">
-
-                            </div>
-                            <p>QR code du recu</p>
-                        </div>
-                    </div>
-                    <h4>MERCI POUR VOTRE PAIEMENT</h4>
-
-                </div>
-                <div class="options">
-
-                </div>
-            </div>
+            <button class="options" id="telecharger">tTelecharger PDF</button>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-            
-        </div>
-    </div>
-    <script src="../caisse.js"></script>
+    <script type="module" src="../caisse.js"></script>
     <script type="module" src="./recus.js"></script>
-</body>
+  </body>
 </html>

@@ -14,9 +14,11 @@ exports.login = (req, res) => {
     const user = results[0];
 
     const token = jwt.sign(
-      { id: user.id, role: user.role },
+      { id: user.id, role: user.role, matricule: user.matricule },
       "SECRET_KEY",
-      { expiresIn: "1h" }
+      {
+        expiresIn: "3h",
+      },
     );
 
     res.json({ token });
@@ -24,16 +26,17 @@ exports.login = (req, res) => {
 };
 
 exports.getProfile = (req, res) => {
-  userModel.getUserById(req.user.id, (err, result) => {
+  const user_id = req.body.id;
+  userModel.getUserById(user_id, (err, result) => {
     if (err) return res.status(500).json(err);
 
     res.json(result[0]);
   });
 };
 
-exports.recherche = (req, res)=>{
-  const {matricule} = req.query;
-  userModel.chercheUser(matricule, (err, result)=>{
+exports.recherche = (req, res) => {
+  const { matricule } = req.query;
+  userModel.chercheUser(matricule, (err, result) => {
     if (err) {
       return res.status(500).json(err);
     }

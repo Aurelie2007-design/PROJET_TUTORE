@@ -73,3 +73,80 @@ tr:hover {
 .receipt-icon:hover {
   color: #5e3fd8;
 }
+
+#contenu {
+  /* max-width: 900px; */
+  padding: 40px;
+  width: auto;
+  height: 500px;
+  margin: auto;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* Carte reçu */
+.recu {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.recu:hover {
+  transform: translateY(-3px);
+}
+
+/* Titre */
+.recu h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* Nom */
+.recu p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Total */
+.recu p b {
+  color: #27ae60;
+  font-size: 18px;
+}
+
+/* Tableau */
+table {
+  margin-top: 15px;
+  border-collapse: collapse;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Header */
+th {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Lignes */
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Effet hover ligne */
+tr:hover td {
+  background: #f9fafb;
+}
+
+/* Séparateur */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+}
