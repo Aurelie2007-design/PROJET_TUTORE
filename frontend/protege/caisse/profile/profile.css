@@ -10,7 +10,7 @@
   --shadow: 0px 0.3px 9px rgb(190, 190, 190);
   --border: 1px solid rgb(190, 190, 190);
   --shadow-gd: 0px 6px 12px rgba(10, 10, 10, 0.4);
-  --linked:                  
+  --linked:                                 
 ;
 }
 .darktheme {
@@ -34,6 +34,7 @@
   --text-color: white;
 }
 body {
+  font-family: "Segoe UI", Arial, sans-serif;
   background: var(--color);
   padding: 0;
   margin: 0;
@@ -151,77 +152,33 @@ body {
   color: var(--color);
 }
 .contenu {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: var(--color);
+  padding: 30px;
 }
-.app {
-  display: flex;
-  height: auto;
-}
-
-.profile {
-  width: 400px;
-  background: white;
-  border-right: 1px solid #eee;
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  border-radius: 10px;
+.profil-section {
+  margin-top: 25px;
+  display: grid;
+  gap: 20px;
 }
 
-.profile-card {
-  text-align: center;
-  padding: 25px 15px;
-  border-bottom: 1px solid #eee;
-}
-
-.avatar {
-  width: 70px;
-  height: 70px;
-  background: #3498db;
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-
-.profile-card h3 {
-  margin: 10px 0 5px;
-}
-
-.matricule {
-  font-size: 13px;
-  color: #888;
-}
-
-/* infos */
-.profile-info {
-  padding: 15px;
-  overflow-y: auto;
-}
-
-.profile-info p {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  margin: 8px 0;
-  background: #f9fafc;
-  border-radius: 6px;
-}
-
-.profile-info span {
-  color: #777;
-}
-
-/* contenu principal */
-#contenu {
-  flex: 1;
-  overflow-y: auto;
+.profil {
+  background: var(--color-checked);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+}
+
+.profil p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.profil strong {
+  color: var(--color);
+}
+
+@media (max-width: 768px) {
+  .profil-section {
+    grid-template-columns: 1fr;
+  }
 }

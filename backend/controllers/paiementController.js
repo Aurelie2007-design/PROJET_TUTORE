@@ -34,6 +34,15 @@ exports.getMonPaiements = (req, res) => {
     res.json(result);
   });
 };
+
+exports.getMesPaiements = (req, res) => {
+  const user_id = req.body.user_id;
+  paiementModel.getMesPaiement(user_id, (err, result) => {
+    if (err) return res.status(500).json(err);
+    res.json(result);
+  });
+};
+
 exports.getAllPaiements = (req, res) => {
   paiementModel((err, result) => {
     if (err) {
@@ -84,5 +93,26 @@ exports.getRecuId = (req, res) => {
       success: true,
       data: result,
     });
+  });
+};
+
+exports.getUserPaiement = (req, res) => {
+  const { user_id } = req.body;
+  paiementModel.getUserPaiement(user_id, (err, result) => {
+    if (err) {
+      return res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.getUserData = (req, res) => {
+  const { user_id } = req.body;
+  paiementModel.getUserData(user_id, (err, result) => {
+    if (err) {
+      return res.status(500).json(err);
+    } else {
+      res.json(result);
+    }
   });
 };

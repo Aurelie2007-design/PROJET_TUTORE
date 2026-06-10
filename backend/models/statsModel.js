@@ -38,18 +38,19 @@ exports.getPaiementsJour = (callback) => {
 exports.getPaiementsJourDetails = (callback) => {
   db.query(
     `
-  SELECT 
-  p.recu_id,
-  u.nom,
-  u.postnom,
-  u.prenom,
-  p.montant,
-  p.motif,
-  TIME(p.date_paiement) AS heure
-  FROM paiements p
-  JOIN users u ON u.id = p.user_id
-  WHERE DATE(p.date_paiement) = CURDATE()
-  ORDER BY p.recu_id, p.date_paiement;
+      SELECT 
+      p.recu_id,
+      u.nom,
+      u.postnom,
+      u.prenom,
+      p.montant,
+      f.nom AS motif,
+      TIME(p.date_paiement) AS heure
+      FROM paiements p
+      JOIN users u ON u.id = p.user_id
+      JOIN frais f ON f.id = p.frais_id 
+      WHERE DATE(p.date_paiement) = CURDATE()
+      ORDER BY p.recu_id, p.date_paiement;
   `,
     callback,
   );

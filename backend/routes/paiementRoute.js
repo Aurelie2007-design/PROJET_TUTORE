@@ -26,13 +26,6 @@ router.post(
 );
 router.post("/recu", auth, role("caissier"), paiementController.recu);
 
-router.get(
-  "/mes_paiements",
-  auth,
-  role("etudiant"),
-  paiementController.getMonPaiements,
-);
-
 router.post("/getRecuId", auth, role("caissier"), paiementController.getRecuId);
 
 router.get("/recu/:id", auth, role("caissier"), paiementController.getRecuId);
@@ -40,3 +33,18 @@ router.get("/recu/:id", auth, role("caissier"), paiementController.getRecuId);
 router.post("/getTotal/", auth, role("caissier", paiementController.total));
 
 module.exports = router;
+
+// user routes
+router.post(
+  "/mes_paiements",
+  auth,
+  role("etudiant"),
+  paiementController.getUserPaiement,
+);
+
+router.post(
+  "/mes_paiements_details",
+  auth,
+  role("etudiant"),
+  paiementController.getMesPaiements,
+);

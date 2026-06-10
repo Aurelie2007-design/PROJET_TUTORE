@@ -8,7 +8,9 @@ const nouvelPaiement = (user_id, montant, motif, recu_id, callback) => {
     callback,
   );
 };
-
+const getUserData = (user_id, callback) => {
+  db.query(`SELECT * FROM users WHERE id = (?)`, [user_id], callback);
+};
 const getStatSemaines = (callback) => {
   db.query(
     `SELECT 
@@ -54,13 +56,21 @@ const getAllPaiements = (callback) => {
     callback,
   );
 };
-const getFraisUser = (user_id, callback) => {
+const getMesPaiement = (user_id, callback) => {
   db.query(
-    `SELECT f.nom FROM users u 
-      JOIN classes c ON c.nom = u.classe  
-      JOIN frais_classes fc ON fc.classe_id = c.id 
-      JOIN frais f ON f.id = fc.frais_id 
-      WHERE u.id = ?
+    ` SELECT 
+          p.recu_id,
+          u.nom,
+          u.postnom,
+          u.prenom,
+          p.montant,
+          f.nom AS motif,
+          p.date_paiement AS heure
+          FROM paiements p
+          JOIN users u ON u.id = p.user_id
+          JOIN frais f ON f.id = p.frais_id
+          WHERE p.user_id = (?)
+          ORDER BY p.recu_id, p.date_paiement;
         `,
     [user_id],
     callback,
@@ -125,13 +135,42 @@ const getRecuId = (recu_id, callback) => {
   );
 };
 
+const getUserPaiement = (user_id, callback) => {
+  db.query(
+    `
+    SELECT 
+        u.nom AS user_nom,
+        u.postnom,
+        u.prenom,
+        f.nom AS frais_nom,
+        f.montant AS frais_montant,
+        p.montant,
+        f.id,
+        COALESCE(SUM(p.montant), 0) AS total_paye,
+        (f.montant - COALESCE(SUM(p.montant), 0)) AS reste
+        FROM users u 
+        JOIN classes c ON c.nom = u.classe
+        JOIN frais_classes fc ON fc.classe_id = c.id
+        JOIN frais f ON f.id = fc.frais_id
+        LEFT JOIN paiements p 
+        ON p.frais_id = f.id 
+        AND p.user_id = u.id
+        WHERE u.id = ?
+        GROUP BY f.id`,
+    [user_id],
+    callback,
+  );
+};
+
 module.exports = {
   getAllPaiements,
   getPaiementByUser,
   createPaiement,
   nouvelPaiement,
-  getFraisUser,
+  getMesPaiement,
   CreateRecu,
   getRecuId,
   getStatSemaines,
+  getUserPaiement,
+  getUserData,
 };

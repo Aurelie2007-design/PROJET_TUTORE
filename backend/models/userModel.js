@@ -10,7 +10,7 @@ const findUserByMatricule = (matricule, password, callback) => {
 
 const getUserById = (id, callback) => {
   db.query(
-    "SELECT matricule, nom, postnom, prenom, classe, email, date_naissance, role FROM users WHERE id=?",
+    "SELECT matricule, nom, postnom, prenom, classe, email, date_naissance FROM users WHERE id=?",
     [id],
     callback,
   );
