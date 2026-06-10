@@ -56,7 +56,10 @@ getPaiementsJour();
 async function getStatSemaine() {
   try {
     const data = await apiFetch(`/stats/semaine`);
+    console.log(data, "data");
     const tableau = {};
+    const labels = [];
+    const values = [];
     for (let i = 0; i < data.length; i++) {
       const date = new Date(data[i].jour);
       const nomJour = date.toLocaleDateString("fr-FR", {
@@ -64,6 +67,10 @@ async function getStatSemaine() {
         timeZone: "UTC",
       });
       tableau[nomJour] = data[i].total;
+      labels.push(nomJour);
+      values.push(data[i].total);
+      console.log(i, data[i].total);
+      console.log(i, nomJour);
     }
     const jours = [
       "lundi",
@@ -79,9 +86,8 @@ async function getStatSemaine() {
       jour,
       total: parseFloat(tableau[jour] || 0),
     }));
-    const labels = jours;
 
-    const values = jours.map((jour) => parseFloat(tableau[jour] || 0));
+    // const values = jours.map((jour) => parseFloat(tableau[jour] || 0));
     console.log(values);
     new Chart(document.getElementById("chart"), {
       type: "bar",
@@ -95,7 +101,7 @@ async function getStatSemaine() {
         ],
       },
     });
-    console.log(formattedData);
+    console.log(values);
   } catch (err) {
     console.log(err);
   }

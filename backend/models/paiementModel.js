@@ -8,9 +8,7 @@ const nouvelPaiement = (user_id, montant, motif, recu_id, callback) => {
     callback,
   );
 };
-const getUserData = (user_id, callback) => {
-  db.query(`SELECT * FROM users WHERE id = (?)`, [user_id], callback);
-};
+
 const getStatSemaines = (callback) => {
   db.query(
     `SELECT 
@@ -172,5 +170,4 @@ module.exports = {
   getRecuId,
   getStatSemaines,
   getUserPaiement,
-  getUserData,
 };

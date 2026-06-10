@@ -105,14 +105,3 @@ exports.getUserPaiement = (req, res) => {
     res.json(result);
   });
 };
-
-exports.getUserData = (req, res) => {
-  const { user_id } = req.body;
-  paiementModel.getUserData(user_id, (err, result) => {
-    if (err) {
-      return res.status(500).json(err);
-    } else {
-      res.json(result);
-    }
-  });
-};
