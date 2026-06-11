@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FST CAISSE - Rapports Financiers</title>
+    <link rel="stylesheet" href="./rapport.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h2>FST CAISSE <span>Administration</span></h2>
+        </div>
+        <nav class="menu">
+          <a href="../dashboard/dashboard.html"
+            ><i class="fa-solid fa-chart-pie"></i> Tableau de bord</a
+          >
+          <a href="../utilisateurs/utilisateurs.html"
+            ><i class="fa-solid fa-users"></i> Utilisateurs</a
+          >
+          <a href="../etudiants/etudiants.html"
+            ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
+          >
+          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../frais/frais.html"
+            ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
+          >
+          <a href="../rapport/rapport.html" class="active"
+            ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
+          >
+        </nav>
+        <a href="#" class="logout"
+          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
+        >
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="page-title">
+            <h1>INTERFACE ADMINISTRATEUR</h1>
+            <p>Rapports financiers</p>
+          </div>
+          <div class="filter-actions">
+            <select class="form-select">
+              <option>Année complète</option>
+              <option disabled>Mois dernier</option>
+              <option disabled>Ce mois</option>
+            </select>
+          </div>
+        </header>
+
+        <div class="reports-grid">
+          <div class="card summary-card">
+            <h3>Résumé</h3>
+            <div class="summary-item">
+              <span>Total recettes</span>
+              <h2 class="text-green" id="total">45.750,00 $</h2>
+            </div>
+            <div class="summary-item">
+              <span>Total paye</span>
+              <h2 class="" id="paye">354</h2>
+            </div>
+            <div class="summary-item">
+              <span>Étudiants en règle</span>
+              <h2 id="nombre">298</h2>
+            </div>
+          </div>
+
+          <div class="card breakout-card">
+            <h3>Recettes par type de frais</h3>
+            <div class="breakout-layout">
+              <!-- <div class="donut-chart large-donut"></div> -->
+              <div class="myChart">
+                <canvas id="myChart" class=""></canvas>
+              </div>
+              <ul class="breakout-list">
+                <li>
+                  <span class="dot inscription"></span>
+                  <span>Montant total</span>
+                  <strong id="pourcent_total">27.450,00 $ (60%)</strong>
+                </li>
+                <li>
+                  <span class="dot tp"></span>
+                  <span>Total paye</span>
+                  <strong id="pourcent_paye">9.150,00 $ (20%)</strong>
+                </li>
+                <li>
+                  <span class="dot examen"></span>
+                  <span>Reste a payer</span>
+                  <strong id="reste_a_payer">4.575,00 $ (10%)</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./rapport.js"></script>
+  </body>
+</html>
+
+<!-- <button class="btn-export">
+    <i class="fa-solid fa-download"></i> Exporter
+  </button> -->

@@ -48,3 +48,32 @@ router.post(
   role("etudiant"),
   paiementController.getMesPaiements,
 );
+
+// directeur routes
+router.post(
+  "/createFrais",
+  auth,
+  role("directeur"),
+  paiementController.creerFrais,
+);
+
+router.get(
+  "/fraisTotal",
+  auth,
+  role("directeur"),
+  paiementController.fraisTotal,
+);
+
+router.get(
+  "/etudiantEnOrdre",
+  auth,
+  role("directeur"),
+  paiementController.etudiantEnOrdre,
+);
+
+router.get(
+  "/fraisAttendu",
+  auth,
+  role("directeur"),
+  paiementController.fraisAttendu,
+);

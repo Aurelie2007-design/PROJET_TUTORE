@@ -79,3 +79,58 @@ exports.getStatsSemaine = (callback) => {
     callback,
   );
 };
+
+// MODELES POUR L'ADMIN
+
+exports.getStats = (callback) => {
+  db.query(
+    `
+    SELECT 
+    DATE_FORMAT(d.jour, '%Y-%m-%d') AS jour,
+    COALESCE(SUM(p.montant), 0) AS total
+    FROM (
+    SELECT CURDATE() - INTERVAL 6 DAY AS jour
+    UNION ALL SELECT CURDATE() - INTERVAL 5 DAY
+    UNION ALL SELECT CURDATE() - INTERVAL 4 DAY
+    UNION ALL SELECT CURDATE() - INTERVAL 3 DAY
+    UNION ALL SELECT CURDATE() - INTERVAL 2 DAY
+    UNION ALL SELECT CURDATE() - INTERVAL 1 DAY
+    UNION ALL SELECT CURDATE()
+    ) d
+    LEFT JOIN paiements p 
+    ON DATE(p.date_paiement) = d.jour
+    GROUP BY d.jour
+    ORDER BY d.jour ASC;
+    `,
+    callback,
+  );
+};
+
+exports.getRecette = (callback) => {
+  db.query(
+    `
+    SELECT 
+    COUNT(DISTINCT user_id) AS nb_etudiants,
+    SUM(montant) AS total,
+    SUM(montant)/COUNT(DISTINCT user_id) AS moyenne
+    FROM paiements
+      `,
+    callback,
+  );
+};
+
+exports.getRecetteJour = (callback) => {
+  db.query(
+    `
+    SELECT 
+    COUNT(DISTINCT user_id) AS nb_etudiants,
+    SUM(montant) AS total_jour,
+    SUM(montant)/COUNT(DISTINCT user_id) AS moyenne
+    FROM paiements
+    WHERE DATE(date_paiement) = CURDATE()
+      `,
+    callback,
+  );
+};
+
+// WHERE DATE(p.date_paiement) = CURDATE()

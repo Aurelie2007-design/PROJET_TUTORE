@@ -7,7 +7,6 @@ if (!token) {
   alert("access refuse");
   window.location.href = "../../../public/login/login.html";
 } else {
-  // console.log(JSON.parse(atob(token.split('.')[1])).role)
   const role = JSON.parse(atob(token.split(".")[1])).role;
   if (role !== "directeur") {
     alert("vous ne pouver voir la page");
@@ -18,6 +17,32 @@ if (!token) {
     }
   }
 }
+async function getData() {
+  try {
+    const data = apiFetch("/getAllClasses");
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getData();
+
+async function afficher() {
+  try {
+    const data = await getData();
+    const div = document.getElementById("select");
+    data.forEach((i) => {
+      div.innerHTML += `<option value="${i.id}">${i.nom}</option>`;
+    });
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+afficher();
 
 function generateMatricule() {
   return Math.floor(10000 + Math.random() * 90000); // 5 chiffres
@@ -31,24 +56,19 @@ function generatePassword(length = 12) {
   const upper = "ABCDE@#FGHIJKLMNOPQRSTUVWXYZ";
   const lower = "abcdefghijk_lmnopqrstuvwxyz";
   const numbers = "0123%456789";
-  //   const symbols = "!@#$%&_?";
 
   const all = upper + lower + numbers;
 
   let password = "";
 
-  // garantir au moins 1 de chaque type
   password += upper[Math.floor(Math.random() * upper.length)];
   password += lower[Math.floor(Math.random() * lower.length)];
   password += numbers[Math.floor(Math.random() * numbers.length)];
-  //   password += symbols[Math.floor(Math.random() * symbols.length)];
 
-  // compléter le reste
   for (let i = 4; i < length; i++) {
     password += all[Math.floor(Math.random() * all.length)];
   }
 
-  // mélanger le mot de passe
   return password
     .split("")
     .sort(() => 0.5 - Math.random())
@@ -60,33 +80,35 @@ document.getElementById("formUser").addEventListener("submit", async (e) => {
 
   const email = document.getElementById("email").value;
 
-  // validation simple email
   if (!email.includes("@")) {
     alert("Email invalide");
     return;
   }
 
+  let nom = document.getElementById("nom").value;
+  const postnom = document.getElementById("postnom").value;
+  const prenom = document.getElementById("prenom").value;
+  const date = document.getElementById("date_naissance").value;
+  const select = document.getElementById("select").value;
+
   const user = {
-    nom: document.getElementById("nom").value,
-    postnom: document.getElementById("postnom").value,
-    prenom: document.getElementById("prenom").value,
+    nom: nom,
+    postnom: postnom,
+    prenom: prenom,
     email: email,
-    date_naissance: document.getElementById("date_naissance").value,
+    date_naissance: date,
     matricule: generateMatricule(),
     password: generatePassword(),
-    classe: 1,
+    classe: select,
   };
 
   console.log(user);
 
-  // affichage
   document.getElementById("resultat").innerHTML = `
     <strong>Compte créé :</strong><br>
     Matricule : ${user.matricule} <br>
     Mot de passe : ${user.password}
   `;
-
-  // envoyer au backend
 
   await apiFetch("/create-user", {
     method: "POST",

@@ -43,3 +43,59 @@ exports.recherche = (req, res) => {
     res.json(result);
   });
 };
+
+exports.CreateUser = (req, res) => {
+  const {
+    nom,
+    postnom,
+    prenom,
+    email,
+    date_naissance,
+    matricule,
+    password,
+    classe,
+  } = req.body;
+  userModel.createUser(
+    nom,
+    postnom,
+    prenom,
+    email,
+    date_naissance,
+    matricule,
+    password,
+    classe,
+    (err, result) => {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      res.json(result);
+    },
+  );
+};
+
+exports.GetAllusers = (req, res) => {
+  userModel.getAllUser((err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.getAllClasses = (req, res) => {
+  userModel.getClasse((err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.getEtudiants = (req, res) => {
+  userModel.getEtudiant((err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};

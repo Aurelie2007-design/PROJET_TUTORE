@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FST CAISSE - Admin Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h2>FST CAISSE <span>Administration</span></h2>
+        </div>
+        <nav class="menu">
+          <a href="../dashboard/dashboard.html" class="active"
+            ><i class="fa-solid fa-chart-pie"></i> Tableau de bord</a
+          >
+          <a href="../utilisateurs/utilisateurs.html"
+            ><i class="fa-solid fa-users"></i> Utilisateurs</a
+          >
+          <a href="../etudiants/etudiants.html"
+            ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
+          >
+          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../frais/frais.html"
+            ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
+          >
+          <a href="../rapport/rapport.html"
+            ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
+          >
+        </nav>
+        <a href="#" class="logout"
+          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
+        >
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="page-title">
+            <h1>INTERFACE ADMINISTRATEUR</h1>
+            <p>Tableau de bord</p>
+          </div>
+          <div class="user-profile">
+            <div class="notification">
+              <i class="fa-solid fa-bell"></i>
+              <span class="badge">1</span>
+            </div>
+            <div class="avatar">Admin</div>
+            <div class="user-info">
+              <h4>Admin FST</h4>
+              <span>Administrateur</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="stats-grid">
+          <div class="card stat-card blue">
+            <span class="card-label" id="">Total des recettes</span>
+            <h3 id="total">45.750,00 $</h3>
+            <span class="trend positive"
+              ><i class="fa-solid fa-arrow-up"></i> +12.5% ce mois</span
+            >
+          </div>
+          <div class="card stat-card green">
+            <span class="card-label">Paiements du jour</span>
+            <h3 id="jour">2.350,00 $</h3>
+            <span class="trend positive"
+              ><i class="fa-solid fa-arrow-up"></i> +4.2% vs hier</span
+            >
+          </div>
+          <div class="card stat-card purple">
+            <span class="card-label">Étudiants inscrits</span>
+            <h3 id="nombre">1.245</h3>
+            <span class="trend positive"
+              ><i class="fa-solid fa-arrow-up"></i> +32 ce mois</span
+            >
+          </div>
+          <div class="card stat-card orange">
+            <span class="card-label">Moyenne annuelle par etudiant</span>
+            <h3 id="moyenne">354</h3>
+            <span class="trend"
+              ><i class="fa-solid fa-clock"></i> +18 ce mois</span
+            >
+          </div>
+        </section>
+
+        <section class="charts-grid">
+          <div class="card chart-box">
+            <h3>Statistiques de la semaine</h3>
+            <canvas id="chart"></canvas>
+          </div>
+          <div class="card chart-box">
+            <h3>Répartition par type de frais</h3>
+            <div class="donut-container">
+              <div class="donut-chart"></div>
+              <div class="legend">
+                <div>
+                  <span class="dot inscription"></span> Frais d'inscription
+                  (40%)
+                </div>
+                <div><span class="dot tp"></span> Frais de TP (30%)</div>
+                <div><span class="dot examen"></span> Frais d'examen (20%)</div>
+              </div>
+            </div>
+          </div>
+          <script type="module" src="./dashboard.js"></script>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

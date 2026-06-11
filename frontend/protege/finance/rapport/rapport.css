@@ -1,0 +1,125 @@
+/* Import global pour lier les structures communes */
+@import url("../dashboard/dashboard.css");
+
+/* Filtres de la barre supérieure */
+.filter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.form-select {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.btn-export {
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-export:hover {
+  background-color: #1e293b;
+}
+
+/* Grilles & Affichages analytiques */
+.reports-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summary-card h3 {
+  font-size: 16px;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.summary-item {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 12px 0;
+}
+
+.summary-item:last-child {
+  border: none;
+}
+
+.summary-item span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.summary-item h2 {
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.breakout-card h3 {
+  margin-bottom: 25px;
+}
+
+.breakout-layout {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.large-donut {
+  width: 160px;
+  height: 160px;
+  background: conic-gradient(
+    #2563eb 60%,
+    #16a34a 60% 80%,
+    #7c3aed 80% 90%,
+    #ea580c 90%
+  );
+}
+
+.breakout-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1;
+}
+
+.breakout-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.breakout-list li span:nth-child(2) {
+  flex-grow: 1;
+  margin-left: 8px;
+  color: #475569;
+}
+
+.breakout-list li strong {
+  color: #0f172a;
+}
+
+.myChart {
+  width: 300px;
+  height: 300px;
+}

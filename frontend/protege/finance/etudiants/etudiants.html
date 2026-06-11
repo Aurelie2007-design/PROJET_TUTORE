@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FST CAISSE - Administration Étudiants</title>
+    <link rel="stylesheet" href="./etudiants.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h2>FST CAISSE <span>Administration</span></h2>
+        </div>
+        <nav class="menu">
+          <a href="../dashboard/dashboard.html"
+            ><i class="fa-solid fa-chart-pie"></i> Tableau de bord</a
+          >
+          <a href="../utilisateurs/utilisateurs.html"
+            ><i class="fa-solid fa-users"></i> Utilisateurs</a
+          >
+          <a href="../etudiants/etudiants.html" class="active"
+            ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
+          >
+          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../frais/frais.html"
+            ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
+          >
+          <a href="../rapport/rapport.html"
+            ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
+          >
+        </nav>
+        <a href="#" class="logout"
+          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
+        >
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="page-title">
+            <h1>INTERFACE ADMINISTRATEUR</h1>
+            <p>Gestion des Étudiants</p>
+          </div>
+        </header>
+
+        <div class="admin-grid">
+          <div class="card form-card">
+            <h3>
+              <i class="fa-solid fa-user-plus"></i> Inscrire un nouvel étudiant
+            </h3>
+            <form id="formUser">
+              <div class="input-group">
+                <input type="text" id="nom" required />
+                <label>Nom</label>
+              </div>
+
+              <div class="input-group">
+                <input type="text" id="postnom" required />
+                <label>Postnom</label>
+              </div>
+
+              <div class="input-group">
+                <select required id="select"></select>
+              </div>
+
+              <div class="input-group">
+                <input type="text" id="prenom" required />
+                <label>Prénom</label>
+              </div>
+
+              <div class="input-group">
+                <input type="email" id="email" required />
+                <label>Email</label>
+              </div>
+
+              <div class="input-group">
+                <input type="date" id="date_naissance" required />
+                <label class="date-label">Date de naissance</label>
+              </div>
+
+              <button type="submit">Créer le compte</button>
+            </form>
+          </div>
+          <div class="" id="resultat"></div>
+        </div>
+      </main>
+      <script type="module" src="./etudiants.js"></script>
+    </div>
+  </body>
+</html>

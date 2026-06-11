@@ -1,0 +1,70 @@
+/* Import global pour lier les structures communes */
+@import url("../dashboard/dashboard.css");
+
+/* Styles spécifiques à la page de gestion des utilisateurs */
+.btn-add {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-add:hover {
+  background-color: #1d4ed8;
+}
+
+.users-table-card {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.users-table-card table th,
+.users-table-card table td {
+  padding: 16px;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-active {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.badge-inactive {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  font-size: 14px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.btn-icon:hover {
+  background-color: #f1f5f9;
+}
+
+.text-red {
+  color: #ef4444;
+}

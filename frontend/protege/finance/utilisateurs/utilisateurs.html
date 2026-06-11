@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FST CAISSE - Gestion des Utilisateurs</title>
+    <link rel="stylesheet" href="utilisateurs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h2>FST CAISSE <span>Administration</span></h2>
+        </div>
+        <nav class="menu">
+          <a href="../dashboard/dashboard.html"
+            ><i class="fa-solid fa-chart-pie"></i> Tableau de bord</a
+          >
+          <a href="../utilisateurs/utilisateurs.html" class="active"
+            ><i class="fa-solid fa-users"></i> Utilisateurs</a
+          >
+          <a href="../etudiants/etudiants.html"
+            ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
+          >
+          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../frais/frais.html"
+            ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
+          >
+          <a href="../rapport/rapport.html"
+            ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
+          >
+        </nav>
+        <a href="#" class="logout"
+          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
+        >
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="page-title">
+            <h1>INTERFACE ADMINISTRATEUR</h1>
+            <p>Gestion des utilisateurs</p>
+          </div>
+          <button class="btn-add">
+            <i class="fa-solid fa-plus"></i> Ajouter utilisateur
+          </button>
+        </header>
+
+        <div class="card users-table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Nom complet</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Statut</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tableau">
+              <tr>
+                <td><strong>Admin FST</strong></td>
+                <td>admin@fst.cd</td>
+                <td>Administrateur</td>
+                <td><span class="badge badge-active">Actif</span></td>
+                <td class="actions">
+                  <button class="btn-icon">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button class="btn-icon text-red">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Paul CAISSIER</strong></td>
+                <td>paul.c@fst.cd</td>
+                <td>Caissier</td>
+                <td><span class="badge badge-active">Actif</span></td>
+                <td class="actions">
+                  <button class="btn-icon">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button class="btn-icon text-red">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Anne COMPTABLE</strong></td>
+                <td>comptable@fst.cd</td>
+                <td>Comptable</td>
+                <td><span class="badge badge-active">Actif</span></td>
+                <td class="actions">
+                  <button class="btn-icon">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button class="btn-icon text-red">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Grace CAISSIER</strong></td>
+                <td>grace@fst.cd</td>
+                <td>Caissier</td>
+                <td><span class="badge badge-inactive">Inactif</span></td>
+                <td class="actions">
+                  <button class="btn-icon">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button class="btn-icon text-red">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="./utilisateurs.js"></script>
+    <script type="module" src="../finance.js"></script>
+  </body>
+</html>

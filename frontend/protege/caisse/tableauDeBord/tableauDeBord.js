@@ -87,7 +87,6 @@ async function getStatSemaine() {
       total: parseFloat(tableau[jour] || 0),
     }));
 
-    // const values = jours.map((jour) => parseFloat(tableau[jour] || 0));
     console.log(values);
     new Chart(document.getElementById("chart"), {
       type: "bar",

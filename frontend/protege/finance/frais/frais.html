@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FST CAISSE - Configuration des Frais</title>
+    <link rel="stylesheet" href="./frais.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h2>FST CAISSE <span>Administration</span></h2>
+        </div>
+        <nav class="menu">
+          <a href="../dashboard/dashboard.html"
+            ><i class="fa-solid fa-chart-pie"></i> Tableau de bord</a
+          >
+          <a href="../utilisateurs/utilisateurs.html"
+            ><i class="fa-solid fa-users"></i> Utilisateurs</a
+          >
+          <a href="../etudiants/etudiants.html"
+            ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
+          >
+          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../frais/frais.html" class="active"
+            ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
+          >
+          <a href="../rapport/rapport.html"
+            ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
+          >
+        </nav>
+        <a href="#" class="logout"
+          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
+        >
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="page-title">
+            <h1>INTERFACE ADMINISTRATEUR</h1>
+            <p>Frais Académiques exigés</p>
+          </div>
+        </header>
+
+        <!-- <div class="admin-grid">
+          <div class="card form-card">
+            <h3>
+              <i class="fa-solid fa-sliders"></i> Fixer un nouveau type de frais
+            </h3>
+            <form>
+              <div class="form-group">
+                <label>Intitulé du frais</label>
+                <input
+                  type="text"
+                  placeholder="Ex: Frais d'enrôlement Mi-Session"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Montant standard ($ USD)</label>
+                <input type="number" step="0.01" placeholder="0.00" required />
+              </div>
+              <div class="form-group">
+                <label>Applicable aux promotions</label>
+                <fieldset>
+                  <legend>Choisissez les classes concernees :</legend>
+
+                  <input type="checkbox" value="html" />
+                  <label for="html">HTML</label>
+
+                  <input type="checkbox" value="css" />
+                  <label for="css">CSS</label>
+
+                  <input type="checkbox" value="js" />
+                  <label for="js">JavaScript</label>
+                </fieldset>
+              </div>
+              <button type="submit" class="btn-submit">
+                Activer et propager le frais
+              </button>
+            </form>
+          </div>
+        </div> -->
+
+        <!-- index.html -->
+
+        <form id="formFrais" class="card">
+          <h2>Créer un frais</h2>
+
+          <input type="text" id="nom" placeholder="Nom du frais" required />
+
+          <textarea id="description" placeholder="Description"></textarea>
+
+          <input type="number" id="montant" placeholder="Montant" required />
+
+          <label>Classes concernées :</label>
+          <div id="classesList"></div>
+
+          <button type="submit">Créer</button>
+        </form>
+      </main>
+    </div>
+    <script type="module" src="./frais.js"></script>
+  </body>
+</html>

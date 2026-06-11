@@ -31,3 +31,27 @@ exports.paiementsDetails = (req, res) => {
     res.json(result);
   });
 };
+
+exports.recette = (req, res) => {
+  statsModel.getRecette((err, result) => {
+    if (err) return res.status(500).json(err);
+
+    res.json(result);
+  });
+};
+
+exports.recetteJour = (req, res) => {
+  statsModel.getRecetteJour((err, result) => {
+    if (err) return res.status(500).json(err);
+
+    res.json(result);
+  });
+};
+
+exports.statsJour = (req, res) => {
+  statsModel.getStats((err, result) => {
+    if (err) return res.status(500).json(err);
+
+    res.json(result);
+  });
+};
