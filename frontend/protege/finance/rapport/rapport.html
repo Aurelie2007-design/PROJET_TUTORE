@@ -36,23 +36,24 @@
             ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
           >
         </nav>
-        <a href="#" class="logout"
-          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
-        >
+        <div class="logout" id="logout">
+          <i class="fa-solid fa-power-off"></i> Déconnexion
+        </div>
       </aside>
 
       <main class="main-content">
         <header class="topbar">
           <div class="page-title">
-            <h1>INTERFACE ADMINISTRATEUR</h1>
-            <p>Rapports financiers</p>
+            <p>Tableau de bord</p>
+            <p class="" id="today">INTERFACE ADMINISTRATEUR</p>
           </div>
-          <div class="filter-actions">
-            <select class="form-select">
-              <option>Année complète</option>
-              <option disabled>Mois dernier</option>
-              <option disabled>Ce mois</option>
-            </select>
+          <div class="user-profile">
+            <div class="notification"></div>
+            <div class="avatar">Admin</div>
+            <div class="user-info">
+              <h4>Admin FST</h4>
+              <span>Administrateur</span>
+            </div>
           </div>
         </header>
 
@@ -103,9 +104,6 @@
       </main>
     </div>
     <script type="module" src="./rapport.js"></script>
+    <script type="module" src="../finance.js"></script>
   </body>
 </html>
-
-<!-- <button class="btn-export">
-    <i class="fa-solid fa-download"></i> Exporter
-  </button> -->

@@ -48,10 +48,10 @@ exports.recetteJour = (req, res) => {
   });
 };
 
-exports.statsJour = (req, res) => {
-  statsModel.getStats((err, result) => {
-    if (err) return res.status(500).json(err);
+// exports.statsJour = (req, res) => {
+//   statsModel.getStats((err, result) => {
+//     if (err) return res.status(500).json(err);
 
-    res.json(result);
-  });
-};
+//     res.json(result);
+//   });
+// };

@@ -40,8 +40,8 @@ async function loadRecu(recu_id) {
                     <div class="right">
                       <p>${total}$</p>
                     </div>`;
-  // container.innerHTML += `<h3>${res.data[0].prenom}</h3>`;
   const nom = document.getElementById("nom");
+  console.log(res);
   nom.innerHTML = `<div class="left">
                       <p>Nom d'etudiant:</p>
                     </div>

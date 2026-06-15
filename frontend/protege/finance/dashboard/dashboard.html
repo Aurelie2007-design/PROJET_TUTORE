@@ -36,26 +36,22 @@
             ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
           >
         </nav>
-        <a href="#" class="logout"
-          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
-        >
+        <div class="logout" id="logout">
+          <i class="fa-solid fa-power-off"></i> Déconnexion
+        </div>
       </aside>
 
       <main class="main-content">
         <header class="topbar">
           <div class="page-title">
-            <h1>INTERFACE ADMINISTRATEUR</h1>
             <p>Tableau de bord</p>
+            <p class="" id="today">INTERFACE ADMINISTRATEUR</p>
           </div>
-          <div class="user-profile">
-            <div class="notification">
-              <i class="fa-solid fa-bell"></i>
-              <span class="badge">1</span>
-            </div>
-            <div class="avatar">Admin</div>
-            <div class="user-info">
-              <h4>Admin FST</h4>
-              <span>Administrateur</span>
+          <div class="right">
+            <div class="right">
+              <button class="changetheme" id="changetheme">
+                Changer le theme
+              </button>
             </div>
           </div>
         </header>
@@ -64,30 +60,18 @@
           <div class="card stat-card blue">
             <span class="card-label" id="">Total des recettes</span>
             <h3 id="total">45.750,00 $</h3>
-            <span class="trend positive"
-              ><i class="fa-solid fa-arrow-up"></i> +12.5% ce mois</span
-            >
           </div>
           <div class="card stat-card green">
             <span class="card-label">Paiements du jour</span>
             <h3 id="jour">2.350,00 $</h3>
-            <span class="trend positive"
-              ><i class="fa-solid fa-arrow-up"></i> +4.2% vs hier</span
-            >
           </div>
           <div class="card stat-card purple">
             <span class="card-label">Étudiants inscrits</span>
             <h3 id="nombre">1.245</h3>
-            <span class="trend positive"
-              ><i class="fa-solid fa-arrow-up"></i> +32 ce mois</span
-            >
           </div>
           <div class="card stat-card orange">
             <span class="card-label">Moyenne annuelle par etudiant</span>
             <h3 id="moyenne">354</h3>
-            <span class="trend"
-              ><i class="fa-solid fa-clock"></i> +18 ce mois</span
-            >
           </div>
         </section>
 
@@ -111,6 +95,7 @@
             </div>
           </div>
           <script type="module" src="./dashboard.js"></script>
+          <script type="module" src="../finance.js"></script>
         </section>
       </main>
     </div>

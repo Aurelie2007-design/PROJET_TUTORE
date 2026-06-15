@@ -35,16 +35,23 @@
             ><i class="fa-solid fa-file-invoice-dollar"></i> Rapports</a
           >
         </nav>
-        <a href="#" class="logout"
-          ><i class="fa-solid fa-power-off"></i> Déconnexion</a
-        >
+        <div class="logout" id="logout">
+          <i class="fa-solid fa-power-off"></i> Déconnexion
+        </div>
       </aside>
 
       <main class="main-content">
         <header class="topbar">
           <div class="page-title">
-            <h1>INTERFACE ADMINISTRATEUR</h1>
-            <p>Gestion des Étudiants</p>
+            <p>Tableau de bord</p>
+            <p class="" id="today">INTERFACE ADMINISTRATEUR</p>
+          </div>
+          <div class="right">
+            <div class="right">
+              <button class="changetheme" id="changetheme">
+                Changer le theme
+              </button>
+            </div>
           </div>
         </header>
 
@@ -90,6 +97,7 @@
         </div>
       </main>
       <script type="module" src="./etudiants.js"></script>
+      <script type="module" src="../finance.js"></script>
     </div>
   </body>
 </html>

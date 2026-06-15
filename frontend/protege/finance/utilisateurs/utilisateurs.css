@@ -1,7 +1,10 @@
 /* Import global pour lier les structures communes */
 @import url("../dashboard/dashboard.css");
 
-/* Styles spécifiques à la page de gestion des utilisateurs */
+.card {
+  margin-top: 90px;
+}
+
 .btn-add {
   background-color: #2563eb;
   color: white;
@@ -20,7 +23,8 @@
 }
 
 .users-table-card {
-  margin-top: 20px;
+  margin: 30px;
+  margin-top: 90px;
   overflow-x: auto;
 }
 

@@ -33,8 +33,9 @@
   background-color: #1e293b;
 }
 
-/* Grilles & Affichages analytiques */
 .reports-grid {
+  margin: 30px;
+  margin-top: 90px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;

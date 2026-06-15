@@ -25,7 +25,6 @@ getData();
 async function getStatSemaine() {
   try {
     const data = await apiFetch(`/stats/semaine`);
-    console.log(data, "data");
     const tableau = {};
     const labels = [];
     const values = [];
@@ -38,8 +37,8 @@ async function getStatSemaine() {
       tableau[nomJour] = data[i].total;
       labels.push(nomJour);
       values.push(data[i].total);
-      console.log(i, data[i].total);
-      console.log(i, nomJour);
+      // console.log(i, data[i].total);
+      // console.log(i, nomJour);
     }
     const jours = [
       "lundi",
@@ -56,7 +55,6 @@ async function getStatSemaine() {
       total: parseFloat(tableau[jour] || 0),
     }));
 
-    console.log(values);
     new Chart(document.getElementById("chart"), {
       type: "bar",
       data: {
@@ -69,7 +67,6 @@ async function getStatSemaine() {
         ],
       },
     });
-    console.log(values);
   } catch (err) {
     console.log(err);
   }

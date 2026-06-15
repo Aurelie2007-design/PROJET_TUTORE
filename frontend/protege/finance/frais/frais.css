@@ -50,3 +50,10 @@ button:hover {
   display: block;
   margin-bottom: 5px;
 }
+
+.containu {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
