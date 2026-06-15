@@ -5,14 +5,12 @@ function getToken() {
 }
 
 export function apiFetch(endpoint, options = {}) {
-
   return fetch(API_URL + endpoint, {
     ...options,
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer " + getToken(),
-      ...options.headers
-    }
-  }).then(res => res.json());
+      Authorization: "Bearer " + getToken(),
+      ...options.headers,
+    },
+  }).then((res) => res.json());
 }
-

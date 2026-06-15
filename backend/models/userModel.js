@@ -2,8 +2,8 @@ const db = require("../db/db");
 
 const findUserByMatricule = (matricule, password, callback) => {
   db.query(
-    "SELECT * FROM users WHERE matricule=? AND password=?",
-    [matricule, password],
+    "SELECT * FROM users WHERE matricule=? AND password=? AND status = ?",
+    [matricule, password, "actif"],
     callback,
   );
 };
@@ -34,8 +34,57 @@ const chercheUser = (matricule, callback) => {
   );
 };
 
+const getAllUser = (callback) => {
+  db.query(
+    `SELECT id,nom, prenom, postnom, status, email, role FROM users `,
+    callback,
+  );
+};
+
+const createUser = (
+  nom,
+  postnom,
+  prenom,
+  email,
+  date_naissance,
+  matricule,
+  password,
+  classe_id,
+  callback,
+) => {
+  db.query(
+    `
+    INSERT INTO users (nom, postnom, prenom, email, date_naissance, matricule, password, role, classe_id) VALUES (?,?,?,?,?,?,?,?,?)
+    `,
+    [
+      nom,
+      postnom,
+      prenom,
+      email,
+      date_naissance,
+      matricule,
+      password,
+      "etudiant",
+      classe_id,
+    ],
+    callback,
+  );
+};
+
+const getClasse = (callback) => {
+  db.query(`SELECT id, nom FROM classes`, callback);
+};
+
+const getEtudiant = (callback) => {
+  db.query(`SELECT id FROM users WHERE role = (?) `, ["etudiant"], callback);
+};
+
 module.exports = {
   findUserByMatricule,
   getUserById,
   chercheUser,
+  createUser,
+  getAllUser,
+  getClasse,
+  getEtudiant,
 };

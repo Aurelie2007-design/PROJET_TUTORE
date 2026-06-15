@@ -106,13 +106,55 @@ exports.getUserPaiement = (req, res) => {
   });
 };
 
-exports.getUserData = (req, res) => {
-  const { user_id } = req.body;
-  paiementModel.getUserData(user_id, (err, result) => {
+exports.creerFrais = (req, res) => {
+  const { nom, description, montant, classes } = req.body;
+
+  if (!nom || !montant || !Array.isArray(classes) || classes.length === 0) {
+    return res.status(400).json({ error: "Champs invalides" });
+  }
+
+  paiementModel.createFrais(nom, description, montant, (err, fraisId) => {
     if (err) {
-      return res.status(500).json(err);
-    } else {
-      res.json(result);
+      console.error(err);
+      return res.status(500).json({ error: "Erreur création frais" });
     }
+
+    paiementModel.addFraisClasses(fraisId, classes, (err2) => {
+      if (err2) {
+        console.error(err2);
+        return res.status(500).json({ error: "Erreur liaison classes" });
+      }
+
+      res.json({
+        message: "Frais créé avec succès",
+        fraisId,
+      });
+    });
+  });
+};
+
+exports.etudiantEnOrdre = (req, res) => {
+  paiementModel.etudiantOrdre((err, result) => {
+    if (err) return res.status(500).json(err);
+
+    res.json(result);
+  });
+};
+
+exports.fraisTotal = (req, res) => {
+  paiementModel.fraisTout((err, result) => {
+    if (err) return res.status(500).json(err);
+
+    res.json(result);
+    console.log(result);
+  });
+};
+
+exports.fraisAttendu = (req, res) => {
+  paiementModel.fraisAttendu((err, result) => {
+    if (err) return res.status(500).json(err);
+
+    res.json(result);
+    console.log(result);
   });
 };

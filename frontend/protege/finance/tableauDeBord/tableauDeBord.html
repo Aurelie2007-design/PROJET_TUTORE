@@ -1,13 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="tableauDeBord.css">
-</head>
-<body>
+    <link rel="stylesheet" href="tableauDeBord.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Créer un compte étudiant</h2>
+
+      <form id="formUser">
+        <div class="input-group">
+          <input type="text" id="nom" required />
+          <label>Nom</label>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="postnom" required />
+          <label>Postnom</label>
+        </div>
+
+        <div class="input-group">
+          <select required>
+            <option value="">Sélectionner une promotion</option>
+            <option>BAC 1 Informatique de Gestion</option>
+            <option>BAC 2 Réseaux & Télécoms</option>
+            <option>BAC 3 Génie Logiciel</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="prenom" required />
+          <label>Prénom</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" required />
+          <label>Email</label>
+        </div>
+
+        <div class="input-group">
+          <input type="date" id="date_naissance" required />
+          <label class="date-label">Date de naissance</label>
+        </div>
+
+        <button type="submit">Créer le compte</button>
+      </form>
+
+      <div id="resultat"></div>
+    </div>
+
     <script type="module" src="./tableauDeBord.js"></script>
     <script type="module" src="../../../js/auth.js"></script>
-</body>
+  </body>
 </html>

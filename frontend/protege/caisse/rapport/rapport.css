@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -139,10 +140,13 @@ body {
   width: 30px;
   border-radius: 50%;
 }
+=======
+@import url(../tableauDeBord/tableauDeBord.css);
+>>>>>>> ff1ef1cf44506abf061475536c2a4a63f0a04a40
 .container .page {
   display: block;
   background: var(--bg-color);
-  width: 80%;
+  width: 100%;
   height: calc(100%);
 }
 .container .page .head {
@@ -217,9 +221,11 @@ body {
   scrollbar-width: none;
 }
 
-/* Carte reçu */
 .recu {
-  background: #ffffff;
+  border: var(--border);
+  background-color: var(--color-checked);
+  box-shadow: var(--shadow);
+  color: var(--color);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 25px;
@@ -231,25 +237,21 @@ body {
   transform: translateY(-3px);
 }
 
-/* Titre */
 .recu h3 {
   margin: 0;
-  color: #2c3e50;
+  color: #29649e;
 }
 
-/* Nom */
 .recu p {
   margin: 5px 0;
   color: #555;
 }
 
-/* Total */
 .recu p b {
   color: #27ae60;
   font-size: 18px;
 }
 
-/* Tableau */
 table {
   margin-top: 15px;
   border-collapse: collapse;
@@ -258,7 +260,6 @@ table {
   border-radius: 8px;
 }
 
-/* Header */
 th {
   background: #2c3e50;
   color: white;
@@ -266,18 +267,16 @@ th {
   text-align: left;
 }
 
-/* Lignes */
 td {
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
 
-/* Effet hover ligne */
 tr:hover td {
   background: #f9fafb;
+  color: #2c3e50;
 }
 
-/* Séparateur */
 hr {
   border: none;
   border-top: 1px solid #eee;

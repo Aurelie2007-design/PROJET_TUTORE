@@ -19,30 +19,28 @@ function login() {
   fetch("http://localhost:3000/api/login", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ matricule, password })
+    body: JSON.stringify({ matricule, password }),
   })
-  .then(res => res.json())
-  .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.token) {
+        error.innerText = "Identifiants incorrects";
+        return;
+      }
 
-    if (!data.token) {
-      error.innerText = "Identifiants incorrects";
-      return;
-    }
+      // sauvegarde token
+      localStorage.setItem("token", data.token);
 
-    // sauvegarde token
-    localStorage.setItem("token", data.token);
+      // décoder JWT
+      const payload = JSON.parse(atob(data.token.split(".")[1]));
 
-    // décoder JWT
-    const payload = JSON.parse(atob(data.token.split('.')[1]));
-
-    redirectUser(payload.role);
-
-  })
-  .catch(() => {
-    error.innerText = "Erreur serveur";
-  });
+      redirectUser(payload.role);
+    })
+    .catch(() => {
+      error.innerText = "Erreur serveur";
+    });
 }
 
 function redirectUser(role) {
@@ -51,10 +49,11 @@ function redirectUser(role) {
   }
 
   if (role === "caissier") {
-    window.location.href = "../../protege/caisse/tableauDeBord/tableauDeBord.html";
+    window.location.href =
+      "../../protege/caisse/tableauDeBord/tableauDeBord.html";
   }
 
   if (role === "directeur") {
-    window.location.href = "../../protege/finance/tableauDeBord/tableauDeBord.html";
+    window.location.href = "../../protege/finance/dashboard/dashboard.html";
   }
 }

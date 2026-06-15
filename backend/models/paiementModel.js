@@ -8,9 +8,7 @@ const nouvelPaiement = (user_id, montant, motif, recu_id, callback) => {
     callback,
   );
 };
-const getUserData = (user_id, callback) => {
-  db.query(`SELECT * FROM users WHERE id = (?)`, [user_id], callback);
-};
+
 const getStatSemaines = (callback) => {
   db.query(
     `SELECT 
@@ -49,7 +47,7 @@ const createPaiement = (user_id, montant, motif, recu_id, callback) => {
 
 const getAllPaiements = (callback) => {
   db.query(
-    `SELECT p.*, u.nom, u.prenom, u.matricule 
+    `SELECT SUM(p.montant)
         FROM paiements p 
         JOIN users u ON p.user_id = u.id
      ORDER BY date_paiement DESC`,
@@ -162,6 +160,88 @@ const getUserPaiement = (user_id, callback) => {
   );
 };
 
+const createFrais = (nom, description, montant, callback) => {
+  db.query(
+    "INSERT INTO frais (nom, description, montant) VALUES (?, ?, ?)",
+    [nom, description, montant],
+    (err, result) => {
+      if (err) return callback(err);
+      callback(null, result.insertId);
+    },
+  );
+};
+
+const addFraisClasses = (fraisId, classes, callback) => {
+  const values = classes.map((c) => [fraisId, c]);
+
+  db.query(
+    "INSERT INTO frais_classes (frais_id, classe_id) VALUES ?",
+    [values],
+    (err) => {
+      if (err) return callback(err);
+      callback(null);
+    },
+  );
+};
+
+const fraisTout = (callback) => {
+  db.query(
+    `SELECT SUM(total_frais) AS total_expected
+      FROM (
+      SELECT 
+      u.id,
+      (
+      SELECT SUM(f.montant)
+      FROM frais f
+      JOIN frais_classes fc ON fc.frais_id = f.id
+      WHERE fc.classe_id = u.classe_id
+      ) AS total_frais
+      FROM users u
+      WHERE u.role = 'etudiant'
+      ) t;`,
+    callback,
+  );
+};
+
+const fraisAttendu = (callback) => {
+  db.query(
+    `
+      SELECT SUM(montant) AS total_paye
+      FROM paiements;
+    `,
+    callback,
+  );
+};
+
+const etudiantOrdre = (callback) => {
+  db.query(
+    `
+  SELECT 
+  u.id,
+  u.nom
+
+  FROM users u
+
+  WHERE u.role = (?)
+  AND 
+  (
+    SELECT COALESCE(SUM(p.montant), 0)
+    FROM paiements p
+    WHERE p.user_id = u.id
+  )
+  >=
+  (
+    SELECT COALESCE(SUM(f.montant), 0)
+    FROM frais f
+    JOIN frais_classes fc ON fc.frais_id = f.id
+    WHERE fc.classe_id = u.classe_id
+  );
+    `,
+    ["etudiant"],
+    callback,
+  );
+};
+
 module.exports = {
   getAllPaiements,
   getPaiementByUser,
@@ -172,5 +252,9 @@ module.exports = {
   getRecuId,
   getStatSemaines,
   getUserPaiement,
-  getUserData,
+  createFrais,
+  addFraisClasses,
+  fraisTout,
+  etudiantOrdre,
+  fraisAttendu,
 };
