@@ -15,8 +15,11 @@ CREATE TABLE paiements (
     user_id INT,
     montant DECIMAL(10,2),
     motif VARCHAR(255),
+    frais_id INT,
     date_paiement DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    recu_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (frais_id) REFERENCES frais(id)
 );
 INSERT INTO users (matricule, nom, postnom, prenom, classe, email, date_naissance, password, role) VALUES
 ('10001', 'Kavira', 'Amani', 'Joel', 'L1 Info', 'etu1@uni.com', '2002-05-10', '1234abcd', 'etudiant'),
@@ -47,7 +50,6 @@ CREATE TABLE frais_classes (
 );
 
 
-ALTER TABLE paiements ADD COLUMN recu_id INT;
 
 CREATE TABLE recus (
     id INT AUTO_INCREMENT PRIMARY KEY,
