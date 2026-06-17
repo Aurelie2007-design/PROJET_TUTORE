@@ -25,6 +25,7 @@ function login() {
   })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       if (!data.token) {
         error.innerText = "Identifiants incorrects";
         return;

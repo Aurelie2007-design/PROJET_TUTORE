@@ -18,8 +18,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: url(../assets/bg.png);
+  background-image: url("download.png");
+  background-repeat: none;
   background-position: center;
+  background-size: cover;
   overflow: hidden;
   scrollbar-width: 0;
 }
@@ -46,16 +48,17 @@ body {
   align-items: center;
 }
 .container .content-page .logo .left {
-  border-radius: 50%;
-  background: blue;
   width: 100px;
-  height: 100px;
-  color: black;
-  overflow: hidden;
-  display: flex;
+  height: 120px;
+  background: linear-gradient(135deg, #0044ff 50%, #0022aa 50%);
+  clip-path: path(
+    "M50,0 C80,0 100,20 100,40 L100,80 C100,100 70,120 50,120 C30,120 0,100 0,80 L0,40 C0,20 20,0 50,0 Z"
+  );
+  box-shadow: 0 0 15px rgba(0, 68, 255, 0.6);
 }
 .container .content-page .logo .right {
   border-left: 3px solid rgba(255, 255, 255, 1);
+  padding-left: 15px;
 }
 .container .content-page .logo .right h1 {
   font-size: 30px;
@@ -83,9 +86,11 @@ body {
 }
 
 .container .content-page .boite .left {
-  width: 30px;
-  height: 30px;
-  background: blue;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 100%;
+  margin-right: 10px;
 }
 .container .content-page .boite .left {
   display: block;
@@ -108,7 +113,7 @@ body {
 }
 .container .content-form .content .titre {
   text-align: center;
-  padding: 20px;
+  padding: 27px;
 }
 .container .content-form .content .titre .logo {
   display: flex;
@@ -116,10 +121,33 @@ body {
   align-items: center;
 }
 .container .content-form .content .titre .logo .logo {
-  height: 50px;
-  width: 50px;
-  background: #030242;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background: #0044ff;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* espace sous l’icône */
+}
+.container .content-form .content .titre .logo .logo::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+}
+.container .content-form .content .titre .logo .logo::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  width: 40px;
+  height: 20px;
+  background: white;
+  border-radius: 50% 50% 0 0;
 }
 .container .content-form .content div.form {
   display: flex;
