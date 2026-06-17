@@ -79,6 +79,68 @@ const getEtudiant = (callback) => {
   db.query(`SELECT id FROM users WHERE role = (?) `, ["etudiant"], callback);
 };
 
+const createCaissierAdmin = (
+  nom,
+  postnom,
+  prenom,
+  email,
+  date_naissance,
+  matricule,
+  password,
+  role,
+  callback,
+) => {
+  db.query(
+    `
+    INSERT INTO users (nom, postnom, prenom, email, date_naissance, matricule, password, role) VALUES (?,?,?,?,?,?,?,?)
+    `,
+    [nom, postnom, prenom, email, date_naissance, matricule, password, role],
+    callback,
+  );
+};
+
+const getUserDataToModify = (id, callback) => {
+  db.query(
+    "SELECT nom, postnom, prenom, email, date_naissance, password FROM users WHERE id=?",
+    [id],
+    callback,
+  );
+};
+
+const updateUser = (
+  nom,
+  postnom,
+  prenom,
+  email,
+  date_naissance,
+  id,
+  password,
+  callback,
+) => {
+  db.query(
+    `UPDATE users
+      SET nom=?, postnom=?, prenom=?, email=?, date_naissance=?, password=?
+      WHERE id=?`,
+    [nom, postnom, prenom, email, date_naissance, password, id],
+    callback,
+  );
+};
+
+const deleteUser = (id, callback) => {
+  db.query("DELETE FROM users WHERE id=?", [id], callback);
+};
+
+const changerStatus = (id, status, callback) => {
+  console.log(status);
+  db.query(
+    `UPDATE users
+      SET status=?
+      WHERE id=?`,
+    [status, id],
+    callback,
+  );
+};
+
 module.exports = {
   findUserByMatricule,
   getUserById,
@@ -87,4 +149,9 @@ module.exports = {
   getAllUser,
   getClasse,
   getEtudiant,
+  createCaissierAdmin,
+  getUserDataToModify,
+  updateUser,
+  deleteUser,
+  changerStatus,
 };

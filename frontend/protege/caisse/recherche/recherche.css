@@ -3,7 +3,6 @@
 .container .page {
   display: block;
   background: var(--bg-color);
-  /* width: 80%; */
   height: calc(100%);
 }
 
@@ -21,11 +20,12 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  height: 50px;
+  height: 100px;
   border-bottom: var(--border);
   box-shadow: var(--shadow);
   background-color: var(--color-checked);
   padding-left: 20px;
+  border-radius: 10px;
 }
 .container .page .contenu .recherche .form input {
   padding: 10px;
@@ -48,7 +48,6 @@
 }
 .container .page .contenu .resultat {
   display: block;
-  /* grid-template-columns: repeat(1, 1fr); */
   justify-content: center;
   padding: 20px;
   overflow-y: scroll;
@@ -58,7 +57,7 @@
 }
 .container .page .contenu .resultat .etudiant {
   margin: 10px;
-  height: 70px;
+  height: 120px;
   width: auto;
   border: var(--border);
   background-color: var(--bg-color);

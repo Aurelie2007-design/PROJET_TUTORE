@@ -5,16 +5,38 @@ async function getData() {
     const data = await apiFetch("/recette/jour");
     const donnee = await apiFetch("/recette/total");
     const nombre = await apiFetch("/getEtudiants", { method: "GET" });
-    console.log(data, donnee, nombre);
+    const depenseJour = await apiFetch("/depenseDuJour");
+    const depenseTotal = await apiFetch("/depenseTotal");
     const total = document.getElementById("total");
     const recetteJour = document.getElementById("jour");
     const nombreEtudiants = document.getElementById("nombre");
     const moyenne = document.getElementById("moyenne");
+    const depjour = parseInt(depenseJour[0].total, 10) || 0;
+    const totjour = data[0].total_jour || 0;
+    const reste = totjour - depjour;
+    const div1 = document.getElementById("all");
+    const div2 = document.getElementById("gone");
+    const div3 = document.getElementById("remain");
 
-    total.innerHTML = `${donnee[0].total}$ `;
+    div1.innerHTML = `Encaissement total du jour: ${parseInt(totjour, 10) || 0}$`;
+    div2.innerHTML = `Depense total du jour: ${depjour}$`;
+    div3.innerHTML = `Reste: ${reste}$`;
+
+    total.innerHTML = `${donnee[0].total || 0}$ `;
     recetteJour.innerHTML = `${data[0].total_jour || 0}$`;
-    nombreEtudiants.innerHTML = `${nombre.length}  etudiants inscrits`;
-    moyenne.innerHTML = `${donnee[0].total / nombre.length}$`;
+    moyenne.innerHTML = `${parseInt(depenseTotal[0].total, 10) || 0}$`;
+    nombreEtudiants.innerHTML = `${depjour}$`;
+    new Chart(document.getElementById("table"), {
+      type: "pie",
+      data: {
+        labels: ["Reste encaisse", "Total depensee"],
+        datasets: [
+          {
+            data: [depjour, reste],
+          },
+        ],
+      },
+    });
   } catch (error) {
     console.log(error);
   }

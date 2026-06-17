@@ -8,9 +8,10 @@ const authContoller = require("../controllers/authController");
 router.get("/recherche", auth, role("caissier"), authContoller.recherche);
 router.post("/profil", authContoller.getProfile);
 
-// routes caissiers
+// routes directeur
 
 router.post("/create-user", auth, role("directeur"), authContoller.CreateUser);
+router.post("/create-caissier", auth, role("directeur"), authContoller.Admin);
 
 router.get("/getAllUsers", auth, role("directeur"), authContoller.GetAllusers);
 router.get(
@@ -20,10 +21,23 @@ router.get(
   authContoller.getAllClasses,
 );
 
-router.get(
-  "/getEtudiants",
+router.get("/getEtudiants", authContoller.getEtudiants);
 
-  authContoller.getEtudiants,
+router.post(
+  "/modify",
+  auth,
+  role("directeur"),
+  authContoller.getUserDataToModify,
+);
+
+router.post("/updateUser", auth, role("directeur"), authContoller.updateUser);
+
+router.post("/deleteUser", auth, role("directeur"), authContoller.deleteUser);
+router.post(
+  "/changerStatus",
+  auth,
+  role("directeur"),
+  authContoller.changerStatus,
 );
 
 module.exports = router;

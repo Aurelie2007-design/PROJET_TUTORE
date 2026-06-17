@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FST CAISSE - Administration Étudiants</title>
-    <link rel="stylesheet" href="./etudiants.css" />
+    <link rel="stylesheet" href="./nouvelUser.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -45,7 +45,7 @@
       <main class="main-content">
         <header class="topbar">
           <div class="page-title">
-            <p>Nouvel etudiant</p>
+            <p>Nouvel utilisateur</p>
             <p class="" id="today">INTERFACE ADMINISTRATEUR</p>
           </div>
           <div class="right">
@@ -60,7 +60,8 @@
         <div class="admin-grid">
           <div class="card form-card">
             <h3>
-              <i class="fa-solid fa-user-plus"></i> Inscrire un nouvel étudiant
+              <i class="fa-solid fa-user-plus"></i> Inscrire un nouvel admin ou
+              un nouveau caissier
             </h3>
             <form id="formUser">
               <div class="input-group">
@@ -74,7 +75,10 @@
               </div>
 
               <div class="input-group">
-                <select required id="select"></select>
+                <select required id="select">
+                  <option value="admin">admin</option>
+                  <option value="caissier">caissier</option>
+                </select>
               </div>
 
               <div class="input-group">
@@ -94,14 +98,11 @@
 
               <button type="submit">Créer le compte</button>
             </form>
-            <a href="../nouvelUser/nouvelUser.html"
-              >Creer un admin ou un caissier</a
-            >
           </div>
           <div class="" id="resultat"></div>
         </div>
       </main>
-      <script type="module" src="./etudiants.js"></script>
+      <script type="module" src="./nouvelUser.js"></script>
       <script type="module" src="../finance.js"></script>
     </div>
   </body>

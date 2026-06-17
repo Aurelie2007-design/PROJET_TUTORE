@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./modifier.css" />
+  </head>
+  <body>
+    <div class="">
+      <!-- <form id="formEdit">
+        <input type="text" id="nom" placeholder="Nom" />
+        <input type="text" id="prenom" placeholder="Prénom" />
+        <input type="text" id="postnom" placeholder="Postnom" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="" id="date_naissance" required />
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Nouveau mot de passe"
+        />
+        <button type="submit">Modifier</button>
+      </form> -->
+      <div class="form-container">
+        <form id="formEdit" class="form-pro">
+          <h2>Modifier utilisateur</h2>
+
+          <div class="input-group">
+            <label>Nom</label>
+            <input type="text" id="nom" placeholder="Nom" />
+          </div>
+
+          <div class="input-group">
+            <label>Prénom</label>
+            <input type="text" id="prenom" placeholder="Prénom" />
+          </div>
+
+          <div class="input-group">
+            <label>Postnom</label>
+            <input type="text" id="postnom" placeholder="Postnom" />
+          </div>
+
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Email" />
+          </div>
+
+          <div class="input-group">
+            <label>Date de naissance</label>
+            <input type="" id="date_naissance" required />
+          </div>
+
+          <div class="input-group">
+            <label>Nouveau mot de passe</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Laisser vide si inchangé"
+            />
+          </div>
+
+          <button type="submit" class="btn-submit">Modifier</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./modifier.js"></script>
+</html>

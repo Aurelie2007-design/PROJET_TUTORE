@@ -28,7 +28,9 @@
           <a href="../etudiants/etudiants.html"
             ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
           >
-          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../depense/depense.html"
+            ><i class="fa-solid fa-wallet"></i> Depenses</a
+          >
           <a href="../frais/frais.html"
             ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
           >
@@ -58,20 +60,20 @@
 
         <section class="stats-grid">
           <div class="card stat-card blue">
-            <span class="card-label" id="">Total des recettes</span>
+            <span class="card-label" id="">Total encaisse</span>
             <h3 id="total">45.750,00 $</h3>
+          </div>
+          <div class="card stat-card orange">
+            <span class="card-label">Total depense</span>
+            <h3 id="moyenne">354</h3>
           </div>
           <div class="card stat-card green">
             <span class="card-label">Paiements du jour</span>
             <h3 id="jour">2.350,00 $</h3>
           </div>
           <div class="card stat-card purple">
-            <span class="card-label">Étudiants inscrits</span>
+            <span class="card-label">Depenses du jour</span>
             <h3 id="nombre">1.245</h3>
-          </div>
-          <div class="card stat-card orange">
-            <span class="card-label">Moyenne annuelle par etudiant</span>
-            <h3 id="moyenne">354</h3>
           </div>
         </section>
 
@@ -83,14 +85,21 @@
           <div class="card chart-box">
             <h3>Répartition par type de frais</h3>
             <div class="donut-container">
-              <div class="donut-chart"></div>
+              <!-- <div class="donut-chart"></div> -->
+              <canvas id="table"></canvas>
               <div class="legend">
                 <div>
-                  <span class="dot inscription"></span> Frais d'inscription
-                  (40%)
+                  <span class="dot tp"></span>
+                  <strong id="all"></strong>
                 </div>
-                <div><span class="dot tp"></span> Frais de TP (30%)</div>
-                <div><span class="dot examen"></span> Frais d'examen (20%)</div>
+                <div>
+                  <span class="dot tp"></span>
+                  <strong id="gone"></strong>
+                </div>
+                <div>
+                  <span class="dot tp"></span>
+                  <strong id="remain"></strong>
+                </div>
               </div>
             </div>
           </div>

@@ -101,6 +101,7 @@ function genererQR(matricule, nom, postnom, montant, date) {
 document.getElementById("telecharger").addEventListener("click", imprimer);
 function imprimer() {
   window.print();
+  window.location.href = `../tableauDeBord/tableauDeBord.html`;
 }
 
 window.onload = () => {

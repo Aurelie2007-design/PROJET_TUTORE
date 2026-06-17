@@ -22,12 +22,12 @@ async function afficher() {
                             <td><strong>${i.nom} ${i.prenom} ${i.postnom}</strong></td>
                             <td>${i.email}</td>
                             <td>${i.role}</td>
-                            <td><span class="badge badge-active">${i.status}</span></td>
+                            <td><span class="badge badge-active status ${i.status}"  data-status="${i.status}" id= "${i.id}">${i.status}</span></td>
                             <td class="actions">
                             <button class="btn-icon">
-                            <i class="fa-solid fa-pen modifier" ${i.id}></i>
+                            <i class="fa-solid fa-pen edit" id="${i.id}"></i>
                             </button>
-                            <button class="btn-icon text-red supprimer" id="${i.id}">
+                            <button class="btn-icon text-red delete" id="${i.id}">
                             <i class="fa-solid fa-trash"></i>
                             </button>
                             </td>
@@ -41,38 +41,50 @@ async function afficher() {
 
 afficher();
 
-document.getElementById("").addEventListener("click", function (e) {
+document.addEventListener("click", function (e) {
   if (e.target.closest(".delete")) {
     const btn = e.target.closest(".delete");
-    const id = btn.dataset.id;
+    const id = btn.id;
 
-    if (!confirm("Supprimer cet utilisateur ?")) return;
+    console.log("Supprimer ID:", id);
 
-    apiFetch(`/users/${id}`, {
-      method: "DELETE",
-    })
-      .then(() => {
-        alert("Utilisateur supprimé");
-        afficher();
-      })
-      .catch((err) => console.error(err));
+    if (!confirm("Supprimer cet utilisateur ?", id)) return;
+
+    apiFetch(`/deleteUser`, {
+      method: "POST",
+      body: JSON.stringify({ id: id }),
+    }).then(() => {
+      alert("utilisateur  supprime");
+      afficher();
+    });
   }
-});
 
-document.addEventListener("click", function (e) {
   if (e.target.closest(".edit")) {
     const btn = e.target.closest(".edit");
-    const id = btn.dataset.id;
+    const id = btn.id;
 
-    const nouveauNom = prompt("Nouveau nom ?");
-    if (!nouveauNom) return;
+    console.log("Modifier ID:", id);
 
-    apiFetch(`/users/${id}`, {
-      method: "PUT",
-      body: JSON.stringify({ nom: nouveauNom }),
+    if (!confirm("Modifier cet utilisateur ?", id)) return;
+
+    window.location.href = `../modifier/modifier.html?id=${id}`;
+  }
+
+  if (e.target.closest(".status")) {
+    const btn = e.target.closest(".status");
+    const id = btn.id;
+
+    const currentStatus = btn.dataset.status;
+
+    const newStatus = currentStatus === "actif" ? "inactif" : "actif";
+
+    console.log(currentStatus, newStatus);
+
+    apiFetch(`/changerStatus`, {
+      method: "POST",
+      body: JSON.stringify({ id: id, status: newStatus }),
     })
       .then(() => {
-        alert("Utilisateur modifié");
         afficher();
       })
       .catch((err) => console.error(err));

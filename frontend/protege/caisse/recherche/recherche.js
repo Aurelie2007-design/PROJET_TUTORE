@@ -36,7 +36,6 @@ async function look() {
 
         div.innerHTML = `
         <div class="profile">
-          <img src="../../../public/assets/profile.jpg">
           <div class="info">
             <h3>${u.nom} ${u.prenom}</h3>
             <p>Classe: FSTA Genie INFO L1</p>

@@ -99,3 +99,83 @@ exports.getEtudiants = (req, res) => {
     res.json(result);
   });
 };
+
+exports.getUserDataToModify = (req, res) => {
+  const { id } = req.body;
+  userModel.getUserDataToModify(id, (err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.updateUser = (req, res) => {
+  const { nom, postnom, prenom, email, date_naissance, id, password } =
+    req.body;
+  console.log(nom, postnom, prenom, email, date_naissance, id, password);
+  userModel.updateUser(
+    nom,
+    postnom,
+    prenom,
+    email,
+    date_naissance,
+    id,
+    password,
+    (err, result) => {
+      if (err) {
+        res.status(500).json(err);
+      }
+      res.json(result);
+    },
+  );
+};
+
+exports.Admin = (req, res) => {
+  const {
+    nom,
+    postnom,
+    prenom,
+    email,
+    date_naissance,
+    matricule,
+    password,
+    role,
+  } = req.body;
+  userModel.createCaissierAdmin(
+    nom,
+    postnom,
+    prenom,
+    email,
+    date_naissance,
+    matricule,
+    password,
+    role,
+    (err, result) => {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      res.json(result);
+    },
+  );
+};
+
+exports.deleteUser = (req, res) => {
+  const { id } = req.body;
+  userModel.deleteUser(id, (err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.changerStatus = (req, res) => {
+  const { id, status } = req.body;
+  userModel.changerStatus(id, status, (err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};

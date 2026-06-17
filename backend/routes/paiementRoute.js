@@ -77,3 +77,31 @@ router.get(
   role("directeur"),
   paiementController.fraisAttendu,
 );
+
+router.post(
+  "/nouvelleDepense",
+  auth,
+  role("directeur"),
+  paiementController.nouvelleDepense,
+);
+
+router.get(
+  "/depenseTotal",
+  auth,
+  role("directeur"),
+  paiementController.depenseTotal,
+);
+
+router.get(
+  "/depenseDuJour",
+  auth,
+  role("directeur"),
+  paiementController.depenseDuJour,
+);
+
+router.get(
+  "/listeDepenseJour",
+  auth,
+  role("directeur"),
+  paiementController.listeDepenseJour,
+);

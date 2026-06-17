@@ -1,94 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="content-page">
-            <div class="content">
-                <div class="logo">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h1>FSTA CAISSE</h1>
-                        <p>Faculte des sciences <br>  et technologies</p>
-                    </div>
-                </div>
-            <div class="titre">
-                <h1>Systeme de gestion de caisse</h1>
-                <p>Une solution numerique avancee pour une gestion </p>
-                    <p> financiere simplifie, securite et efficace</p>
+      <div class="content-page">
+        <div class="content">
+          <div class="logo">
+            <div class="left"></div>
+            <div class="right">
+              <h1>FSTA CAISSE</h1>
+              <p>
+                Faculte des sciences <br />
+                et technologies
+              </p>
             </div>
-            <div class="boite">
-                <div class="boite1">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h3>Securite</h3>
-                        <p>Protection optimise des donnees et des transactions</p>
-                    </div>
-                </div>
-                <div class="boite3">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h3>Efficace</h3>
-                        <p>Suivi en temps reel des paiements  et des encaisse</p>
-                    </div>
-                </div>
-                <div class="boite3">
-                    <div class="left"></div>
-                    <div class="right">
-                        <h3>Securite</h3>
-                        <p>Protection optimise des donnees et des transactions</p>
-                    </div>
-                </div>
+          </div>
+          <div class="titre">
+            <h1>Systeme de gestion de caisse</h1>
+            <p>Une solution numerique avancee pour une gestion</p>
+            <p>financiere simplifie, securite et efficace</p>
+          </div>
+          <div class="boite">
+            <div class="boite1">
+              <div class="left"></div>
+              <div class="right">
+                <h3>Securite</h3>
+                <p>Protection optimise des donnees et des transactions</p>
+              </div>
             </div>
-            <div class="link">
-                <p>
-                    @2025 FSTA - Tous droits reserves
-                </p>
+            <div class="boite3">
+              <div class="left"></div>
+              <div class="right">
+                <h3>Efficace</h3>
+                <p>Suivi en temps reel des paiements et des encaisse</p>
+              </div>
             </div>
+            <div class="boite3">
+              <div class="left"></div>
+              <div class="right">
+                <h3>Securite</h3>
+                <p>Protection optimise des donnees et des transactions</p>
+              </div>
+            </div>
+          </div>
+          <div class="link">
+            <p>@2025 FSTA - Tous droits reserves</p>
+          </div>
         </div>
-            
-        </div>
-        <div class="content-form">
-            <div class="content">
-                <div class="titre">
-                    <div class="logo">
-                        <div class="logo"></div>
-                    </div>
-                    <h1>Connexion</h1>
-                    <p>Connectez-vous a votre compte</p>
-                </div>
-                <div class="form"><form action="" method="post" class="form">
-                    <label for="matricule">
-                        <p>matricule</p>
-                    </label>
-                    <input type="texte" name="matricule" placeholder="entrer votre matricule" id="matricule">
-                    <br>
-                    <br>
-                    <label for="mot_de_passe">
-                        <p>Mot de passe</p>
-                    </label>
-                    <input type="password" name="mot_de_passe" placeholder="Entrer votre mot de passe" id="password">
-                    <br>
-                    <br>
-                    <br>
-                    <input type="button" value="se connecter" class="bouton" onclick="login()">
-                    
-                </form></div>
-                <p id="error"></p>
-                
-                <div class="link">
-                    <p>Impossible de vous connecter si vous n'etes pas dans la base de donnee pour l'anne</p>
-                    <h3>2025-2026</h3>
-                </div>
+      </div>
+      <div class="content-form">
+        <div class="content">
+          <div class="titre">
+            <div class="logo">
+              <div class="logo"></div>
             </div>
+            <h1>Connexion</h1>
+            <p>Connectez-vous a votre compte</p>
+          </div>
+          <div class="form">
+            <form action="" method="post" class="form">
+              <label for="matricule">
+                <p>matricule</p>
+              </label>
+              <input
+                type="texte"
+                name="matricule"
+                placeholder="entrer votre matricule"
+                id="matricule"
+              />
+              <br />
+              <br />
+              <label for="mot_de_passe">
+                <p>Mot de passe</p>
+              </label>
+              <input
+                type="password"
+                name="mot_de_passe"
+                placeholder="Entrer votre mot de passe"
+                id="password"
+              />
+              <br />
+              <br />
+              <br />
+              <input
+                type="button"
+                value="se connecter"
+                class="bouton"
+                onclick="login()"
+              />
+            </form>
+          </div>
+          <p id="error"></p>
+
+          <div class="link">
+            <p>
+              Impossible de vous connecter si vous n'etes pas dans la base de
+              donnee pour l'anne
+            </p>
+            <h3>2025-2026</h3>
+          </div>
         </div>
+      </div>
     </div>
     <script src="./login.js"></script>
     <script src="../../js/api.js"></script>
-</body>
+  </body>
 </html>

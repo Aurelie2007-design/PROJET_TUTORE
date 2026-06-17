@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FST CAISSE - Configuration des Frais</title>
-    <link rel="stylesheet" href="./frais.css" />
+    <link rel="stylesheet" href="./depense.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,10 +27,10 @@
           <a href="../etudiants/etudiants.html"
             ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
           >
-          <a href="../depense/depense.html"
+          <a href="../depense/depense.html" class="active"
             ><i class="fa-solid fa-wallet"></i> Depenses</a
           >
-          <a href="../frais/frais.html" class="active"
+          <a href="../frais/frais.html"
             ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
           >
           <a href="../rapport/rapport.html"
@@ -45,7 +45,7 @@
       <main class="main-content">
         <header class="topbar">
           <div class="page-title">
-            <p>Nouveau frais</p>
+            <p>Depenses</p>
             <p class="" id="today">INTERFACE ADMINISTRATEUR</p>
           </div>
           <div class="user-profile">
@@ -58,25 +58,22 @@
           </div>
         </header>
 
-        <div class="containu">
+        <div class="contenu">
           <form id="formFrais" class="card">
-            <h2>Créer un frais</h2>
-
-            <input type="text" id="nom" placeholder="Nom du frais" required />
+            <h2>Enregistrer une nouvelle depense</h2>
 
             <textarea id="description" placeholder="Description"></textarea>
 
             <input type="number" id="montant" placeholder="Montant" required />
 
-            <label>Classes concernées :</label>
-            <div id="classesList"></div>
-
             <button type="submit">Créer</button>
           </form>
+
+          <hr />
         </div>
       </main>
     </div>
-    <script type="module" src="./frais.js"></script>
+    <script type="module" src="./depense.js"></script>
     <script type="module" src="../finance.js"></script>
   </body>
 </html>

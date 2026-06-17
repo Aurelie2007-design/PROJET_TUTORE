@@ -88,7 +88,7 @@ const getPaiementByUser = (user_id, callback) => {
         COALESCE(SUM(p.montant), 0) AS total_paye,
         (f.montant - COALESCE(SUM(p.montant), 0)) AS reste
         FROM users u 
-        JOIN classes c ON c.nom = u.classe
+        JOIN classes c ON c.id = u.classe_id
         JOIN frais_classes fc ON fc.classe_id = c.id
         JOIN frais f ON f.id = fc.frais_id
         LEFT JOIN paiements p 
@@ -147,7 +147,7 @@ const getUserPaiement = (user_id, callback) => {
         COALESCE(SUM(p.montant), 0) AS total_paye,
         (f.montant - COALESCE(SUM(p.montant), 0)) AS reste
         FROM users u 
-        JOIN classes c ON c.nom = u.classe
+        JOIN classes c ON c.id = u.classe_id
         JOIN frais_classes fc ON fc.classe_id = c.id
         JOIN frais f ON f.id = fc.frais_id
         LEFT JOIN paiements p 
@@ -242,6 +242,39 @@ const etudiantOrdre = (callback) => {
   );
 };
 
+// PARTIE DEPENSES
+
+const nouvelleDepense = (montant, description) => {
+  db.query("INSERT INTO depenses (montant, description) VALUES (?, ?)", [
+    montant,
+    description,
+  ]);
+};
+
+const depenseDuJour = (callback) => {
+  db.query(
+    `
+    SELECT SUM(montant) AS total
+    FROM depenses
+    WHERE DATE(date_depense) = CURDATE()
+  `,
+    callback,
+  );
+};
+
+const depenseTotal = (callback) => {
+  db.query(
+    `
+    SELECT SUM(montant) AS total FROM depenses
+  `,
+    callback,
+  );
+};
+
+const listeDepenseJour = (callback) => {
+  db.query("SELECT * FROM depenses ORDER BY date_depense DESC", callback);
+};
+
 module.exports = {
   getAllPaiements,
   getPaiementByUser,
@@ -257,4 +290,8 @@ module.exports = {
   fraisTout,
   etudiantOrdre,
   fraisAttendu,
+  nouvelleDepense,
+  depenseDuJour,
+  depenseTotal,
+  listeDepenseJour,
 };

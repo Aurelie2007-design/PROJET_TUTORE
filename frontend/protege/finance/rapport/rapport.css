@@ -1,7 +1,6 @@
 /* Import global pour lier les structures communes */
 @import url("../dashboard/dashboard.css");
 
-/* Filtres de la barre supérieure */
 .filter-actions {
   display: flex;
   gap: 12px;
@@ -82,17 +81,6 @@
   gap: 40px;
 }
 
-.large-donut {
-  width: 160px;
-  height: 160px;
-  background: conic-gradient(
-    #2563eb 60%,
-    #16a34a 60% 80%,
-    #7c3aed 80% 90%,
-    #ea580c 90%
-  );
-}
-
 .breakout-list {
   list-style: none;
   display: flex;
@@ -113,7 +101,7 @@
 .breakout-list li span:nth-child(2) {
   flex-grow: 1;
   margin-left: 8px;
-  color: #475569;
+  /* color: #475569; */
 }
 
 .breakout-list li strong {

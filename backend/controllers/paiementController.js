@@ -158,3 +158,41 @@ exports.fraisAttendu = (req, res) => {
     console.log(result);
   });
 };
+
+exports.nouvelleDepense = (req, res) => {
+  const { montant, description } = req.body;
+  console.log(montant, description);
+  paiementModel.nouvelleDepense(montant, description, (err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.depenseTotal = (req, res) => {
+  paiementModel.depenseTotal((err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.depenseDuJour = (req, res) => {
+  paiementModel.depenseDuJour((err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};
+
+exports.listeDepenseJour = (req, res) => {
+  paiementModel.listeDepenseJour((err, result) => {
+    if (err) {
+      res.status(500).json(err);
+    }
+    res.json(result);
+  });
+};

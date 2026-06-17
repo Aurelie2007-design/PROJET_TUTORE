@@ -40,12 +40,12 @@
   font-weight: 600;
 }
 
-.badge-active {
+.actif {
   background-color: #dcfce7;
   color: #16a34a;
 }
 
-.badge-inactive {
+.inactif {
   background-color: #fee2e2;
   color: #ef4444;
 }

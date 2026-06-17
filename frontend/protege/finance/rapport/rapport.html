@@ -28,7 +28,9 @@
           <a href="../etudiants/etudiants.html"
             ><i class="fa-solid fa-user-graduate"></i> Étudiants</a
           >
-          <a href="#"><i class="fa-solid fa-wallet"></i> Paiements</a>
+          <a href="../depense/depense.html"
+            ><i class="fa-solid fa-wallet"></i> Depenses</a
+          >
           <a href="../frais/frais.html"
             ><i class="fa-solid fa-graduation-cap"></i> Frais académiques</a
           >
@@ -44,7 +46,7 @@
       <main class="main-content">
         <header class="topbar">
           <div class="page-title">
-            <p>Tableau de bord</p>
+            <p>Rapport</p>
             <p class="" id="today">INTERFACE ADMINISTRATEUR</p>
           </div>
           <div class="user-profile">
@@ -59,9 +61,9 @@
 
         <div class="reports-grid">
           <div class="card summary-card">
-            <h3>Résumé</h3>
+            <h3>Paiements attendus et paiements effectues</h3>
             <div class="summary-item">
-              <span>Total recettes</span>
+              <span>Total attendu</span>
               <h2 class="text-green" id="total">45.750,00 $</h2>
             </div>
             <div class="summary-item">
@@ -75,15 +77,14 @@
           </div>
 
           <div class="card breakout-card">
-            <h3>Recettes par type de frais</h3>
+            <h3>Paiement total par rapport au paiement total attendu</h3>
             <div class="breakout-layout">
-              <!-- <div class="donut-chart large-donut"></div> -->
               <div class="myChart">
                 <canvas id="myChart" class=""></canvas>
               </div>
               <ul class="breakout-list">
                 <li>
-                  <span class="dot inscription"></span>
+                  <span class="dot tp"></span>
                   <span>Montant total</span>
                   <strong id="pourcent_total">27.450,00 $ (60%)</strong>
                 </li>
@@ -93,9 +94,52 @@
                   <strong id="pourcent_paye">9.150,00 $ (20%)</strong>
                 </li>
                 <li>
-                  <span class="dot examen"></span>
+                  <span class="dot tp"></span>
                   <span>Reste a payer</span>
                   <strong id="reste_a_payer">4.575,00 $ (10%)</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="reports-grid">
+          <div class="card summary-card">
+            <h3>Total encaisse et total depense</h3>
+            <div class="summary-item">
+              <span>Total encaisse</span>
+              <h2 class="text-green" id="alltotal">45.750,00 $</h2>
+            </div>
+            <div class="summary-item">
+              <span>Total depense</span>
+              <h2 class="" id="allgone">354</h2>
+            </div>
+            <div class="summary-item">
+              <span>Reste</span>
+              <h2 id="allremain">298</h2>
+            </div>
+          </div>
+
+          <div class="card breakout-card">
+            <h3>Paiement total par rapport au paiement total attendu</h3>
+            <div class="breakout-layout">
+              <div class="myChart">
+                <canvas id="tableau" class=""></canvas>
+              </div>
+              <ul class="breakout-list">
+                <li>
+                  <span class="dot tp"></span>
+                  <span>Montant total encaisse</span>
+                  <strong id="all">27.450,00 $ (60%)</strong>
+                </li>
+                <li>
+                  <span class="dot tp"></span>
+                  <span>Total depense</span>
+                  <strong id="remain">9.150,00 $ (20%)</strong>
+                </li>
+                <li>
+                  <span class="dot tp"></span>
+                  <span>Solde restant</span>
+                  <strong id="gone">4.575,00 $ (10%)</strong>
                 </li>
               </ul>
             </div>
