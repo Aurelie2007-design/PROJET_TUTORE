@@ -1,7 +1,7 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #f5f7fa;
-  margin: 0;
+  margin-top: 13px;
   display: flex;
 }
 .main-content {
